@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Digital Marketing Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        padding: 20px;
+      }
+      .quiz-container {
+        max-width: 850px;
+        margin: auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .question p {
+        font-weight: bold;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h2>Digital Marketing Quiz – 20 Questions</h2>
+      <form id="quizForm"></form>
+      <button onclick="checkAnswers()">Submit Quiz</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. What does SEO stand for?",
+          options: [
+            "Search Email Optimization",
+            "Search Engine Optimization",
+            "Social Engine Optimization",
+            "Search Engine Operation",
+          ],
+          answer: "Search Engine Optimization",
+        },
+        {
+          q: "2. Which platform is best for B2B marketing?",
+          options: ["Instagram", "Snapchat", "LinkedIn", "TikTok"],
+          answer: "LinkedIn",
+        },
+        {
+          q: "3. What is PPC in digital marketing?",
+          options: [
+            "Pay Per Click",
+            "Pay Per Customer",
+            "Post Per Campaign",
+            "Pay Per Content",
+          ],
+          answer: "Pay Per Click",
+        },
+        {
+          q: "4. What tool is commonly used for web traffic analysis?",
+          options: ["Photoshop", "Google Analytics", "Zoom", "Google Docs"],
+          answer: "Google Analytics",
+        },
+        {
+          q: "5. What does CTA stand for?",
+          options: [
+            "Call To Action",
+            "Click Through Action",
+            "Campaign Tracking Algorithm",
+            "Customer Tracking Alert",
+          ],
+          answer: "Call To Action",
+        },
+        {
+          q: "6. Which of the following is an example of content marketing?",
+          options: ["Email spam", "Banner ads", "Blog articles", "Cold calls"],
+          answer: "Blog articles",
+        },
+        {
+          q: "7. What does CPM stand for?",
+          options: [
+            "Cost Per Minute",
+            "Cost Per Mile",
+            "Cost Per Thousand Impressions",
+            "Click Per Minute",
+          ],
+          answer: "Cost Per Thousand Impressions",
+        },
+        {
+          q: "8. What is A/B testing?",
+          options: [
+            "Testing two browsers",
+            "Comparing two versions of content",
+            "Testing two users",
+            "Testing two databases",
+          ],
+          answer: "Comparing two versions of content",
+        },
+        {
+          q: "9. Which platform is best for influencer marketing?",
+          options: ["Google Ads", "Facebook", "Pinterest", "Instagram"],
+          answer: "Instagram",
+        },
+        {
+          q: "10. What is the goal of remarketing?",
+          options: [
+            "Attract new customers",
+            "Target existing employees",
+            "Re-engage past website visitors",
+            "Send weekly emails",
+          ],
+          answer: "Re-engage past website visitors",
+        },
+        {
+          q: "11. What is bounce rate?",
+          options: [
+            "Email unsubscribe rate",
+            "People who leave after visiting one page",
+            "Number of pages visited",
+            "People who return daily",
+          ],
+          answer: "People who leave after visiting one page",
+        },
+        {
+          q: "12. What is a landing page?",
+          options: [
+            "Your website homepage",
+            "A specific page visitors land on after clicking a link",
+            "An error page",
+            "The blog page",
+          ],
+          answer: "A specific page visitors land on after clicking a link",
+        },
+        {
+          q: "13. What does ROI mean?",
+          options: [
+            "Rate of Interaction",
+            "Return on Investment",
+            "Reach of Influence",
+            "Review of Impressions",
+          ],
+          answer: "Return on Investment",
+        },
+        {
+          q: "14. Which of these is a social media scheduling tool?",
+          options: ["WordPress", "Hootsuite", "Excel", "Google Forms"],
+          answer: "Hootsuite",
+        },
+        {
+          q: "15. What is email marketing mainly used for?",
+          options: [
+            "Sending ads",
+            "Engaging with customers",
+            "Website hosting",
+            "Video editing",
+          ],
+          answer: "Engaging with customers",
+        },
+        {
+          q: "16. What is organic traffic?",
+          options: [
+            "Paid visitors",
+            "Visitors from search engines",
+            "Visitors from ads",
+            "Social media shares",
+          ],
+          answer: "Visitors from search engines",
+        },
+        {
+          q: "17. What does SERP stand for?",
+          options: [
+            "Search Engine Results Page",
+            "Social Engagement Ranking Platform",
+            "Software Email Response Program",
+            "Sales Engagement Review Plan",
+          ],
+          answer: "Search Engine Results Page",
+        },
+        {
+          q: "18. What is affiliate marketing?",
+          options: [
+            "Working with social media",
+            "Paying for banner ads",
+            "Earning commission by promoting products",
+            "Selling ad space",
+          ],
+          answer: "Earning commission by promoting products",
+        },
+        {
+          q: "19. What is a backlink?",
+          options: [
+            "A website layout",
+            "A link to another page on your site",
+            "An incoming link from another site",
+            "A page reload",
+          ],
+          answer: "An incoming link from another site",
+        },
+        {
+          q: "20. What is keyword stuffing?",
+          options: [
+            "Using ads with too many keywords",
+            "Repeating keywords unnaturally in content",
+            "Finding new keywords",
+            "Ranking keywords",
+          ],
+          answer: "Repeating keywords unnaturally in content",
+        },
+      ];
+
+      const form = document.getElementById("quizForm");
+
+      questions.forEach((question, index) => {
+        const qDiv = document.createElement("div");
+        qDiv.classList.add("question");
+
+        let html = `<p>${question.q}</p>`;
+        question.options.forEach((option) => {
+          html += `<label><input type="radio" name="q${index}" value="${option}"> ${option}</label><br>`;
+        });
+
+        qDiv.innerHTML = html;
+        form.appendChild(qDiv);
+      });
+
+      function checkAnswers() {
+        let score = 0;
+        questions.forEach((question, index) => {
+          const selected = document.querySelector(
+            `input[name="q${index}"]:checked`
+          );
+          if (selected && selected.value === question.answer) {
+            score++;
+          }
+        });
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of ${questions.length}`;
+      }
+    </script>
+  </body>
+</html>

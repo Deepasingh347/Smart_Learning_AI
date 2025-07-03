@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Business Analyst Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f7f8;
+        padding: 20px;
+      }
+      h2 {
+        text-align: center;
+      }
+      .question {
+        background: #fff;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin: 5px 0;
+      }
+      .submit-btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background: #4caf50;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Business Analyst Quiz</h2>
+
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What is the main role of a Business Analyst?</p>
+        <label><input type="radio" name="q1" /> Design websites</label>
+        <label><input type="radio" name="q1" /> Write code</label>
+        <label
+          ><input type="radio" name="q1" /> Analyze business needs and recommend
+          solutions</label
+        >
+        <label><input type="radio" name="q1" /> Manage database servers</label>
+      </div>
+
+      <div class="question">
+        <p>
+          2. Which document is used to gather and document business
+          requirements?
+        </p>
+        <label><input type="radio" name="q2" /> Use Case Document</label>
+        <label
+          ><input type="radio" name="q2" /> Business Requirements Document
+          (BRD)</label
+        >
+        <label><input type="radio" name="q2" /> Test Case</label>
+        <label><input type="radio" name="q2" /> Code Specification</label>
+      </div>
+
+      <div class="question">
+        <p>3. What does SWOT stand for?</p>
+        <label
+          ><input type="radio" name="q3" /> System, Web, Option, Task</label
+        >
+        <label
+          ><input type="radio" name="q3" /> Strengths, Weaknesses,
+          Opportunities, Threats</label
+        >
+        <label
+          ><input type="radio" name="q3" /> Strategy, Work, Operation,
+          Testing</label
+        >
+        <label><input type="radio" name="q3" /> None of the above</label>
+      </div>
+
+      <div class="question">
+        <p>4. Which technique is used to model business processes?</p>
+        <label><input type="radio" name="q4" /> DFD</label>
+        <label><input type="radio" name="q4" /> BPMN</label>
+        <label><input type="radio" name="q4" /> UML</label>
+        <label><input type="radio" name="q4" /> All of the above</label>
+      </div>
+
+      <div class="question">
+        <p>5. Which skill is most important for a Business Analyst?</p>
+        <label><input type="radio" name="q5" /> Graphic Design</label>
+        <label><input type="radio" name="q5" /> Programming</label>
+        <label><input type="radio" name="q5" /> Communication</label>
+        <label><input type="radio" name="q5" /> Hardware Maintenance</label>
+      </div>
+
+      <div class="question">
+        <p>6. What is a stakeholder?</p>
+        <label><input type="radio" name="q6" /> A document</label>
+        <label><input type="radio" name="q6" /> A software tool</label>
+        <label
+          ><input type="radio" name="q6" /> A person who has an interest in the
+          outcome of a project</label
+        >
+        <label><input type="radio" name="q6" /> None of the above</label>
+      </div>
+
+      <div class="question">
+        <p>7. What is a gap analysis?</p>
+        <label><input type="radio" name="q7" /> Finding bugs in code</label>
+        <label
+          ><input type="radio" name="q7" /> Comparing current state with desired
+          future state</label
+        >
+        <label><input type="radio" name="q7" /> Creating wireframes</label>
+        <label><input type="radio" name="q7" /> Measuring revenue</label>
+      </div>
+
+      <div class="question">
+        <p>8. What is the purpose of a Use Case?</p>
+        <label
+          ><input type="radio" name="q8" /> To describe how a system interacts
+          with users</label
+        >
+        <label><input type="radio" name="q8" /> To design a webpage</label>
+        <label><input type="radio" name="q8" /> To list database tables</label>
+        <label><input type="radio" name="q8" /> To debug applications</label>
+      </div>
+
+      <div class="question">
+        <p>9. What is Agile?</p>
+        <label><input type="radio" name="q9" /> A programming language</label>
+        <label
+          ><input type="radio" name="q9" /> A project management
+          methodology</label
+        >
+        <label><input type="radio" name="q9" /> A testing tool</label>
+        <label><input type="radio" name="q9" /> A type of network</label>
+      </div>
+
+      <div class="question">
+        <p>10. What is a requirement?</p>
+        <label
+          ><input type="radio" name="q10" /> A condition or capability needed by
+          a stakeholder</label
+        >
+        <label><input type="radio" name="q10" /> A legal contract</label>
+        <label><input type="radio" name="q10" /> An error in the system</label>
+        <label><input type="radio" name="q10" /> A backup plan</label>
+      </div>
+
+      <div class="question">
+        <p>11. What is RACI Matrix used for?</p>
+        <label><input type="radio" name="q11" /> Risk analysis</label>
+        <label
+          ><input type="radio" name="q11" /> Responsibility assignment</label
+        >
+        <label><input type="radio" name="q11" /> Software design</label>
+        <label><input type="radio" name="q11" /> Budget planning</label>
+      </div>
+
+      <div class="question">
+        <p>12. What is a functional requirement?</p>
+        <label
+          ><input type="radio" name="q12" /> Describes system behavior</label
+        >
+        <label><input type="radio" name="q12" /> Describes visual design</label>
+        <label
+          ><input type="radio" name="q12" /> Describes user interface
+          colors</label
+        >
+        <label><input type="radio" name="q12" /> Describes team roles</label>
+      </div>
+
+      <div class="question">
+        <p>13. What is the difference between BRD and FRD?</p>
+        <label
+          ><input type="radio" name="q13" /> BRD is broader; FRD is
+          detailed</label
+        >
+        <label
+          ><input type="radio" name="q13" /> FRD is broader; BRD is
+          detailed</label
+        >
+        <label><input type="radio" name="q13" /> Both are same</label>
+        <label><input type="radio" name="q13" /> None of these</label>
+      </div>
+
+      <div class="question">
+        <p>14. What does KPI stand for?</p>
+        <label><input type="radio" name="q14" /> Key Process Integration</label>
+        <label
+          ><input type="radio" name="q14" /> Key Performance Indicator</label
+        >
+        <label
+          ><input type="radio" name="q14" /> Knowledge Performance Index</label
+        >
+        <label><input type="radio" name="q14" /> Key Project Issue</label>
+      </div>
+
+      <div class="question">
+        <p>15. What is benchmarking?</p>
+        <label
+          ><input type="radio" name="q15" /> Comparing performance with
+          competitors</label
+        >
+        <label><input type="radio" name="q15" /> Writing test cases</label>
+        <label><input type="radio" name="q15" /> Hiring employees</label>
+        <label><input type="radio" name="q15" /> Conducting surveys</label>
+      </div>
+
+      <div class="question">
+        <p>16. What tool is commonly used for data visualization?</p>
+        <label><input type="radio" name="q16" /> Microsoft Word</label>
+        <label><input type="radio" name="q16" /> Power BI</label>
+        <label><input type="radio" name="q16" /> Notepad</label>
+        <label><input type="radio" name="q16" /> Google Forms</label>
+      </div>
+
+      <div class="question">
+        <p>17. What is scope creep?</p>
+        <label><input type="radio" name="q17" /> Project delay</label>
+        <label
+          ><input type="radio" name="q17" /> Uncontrolled changes in project
+          scope</label
+        >
+        <label><input type="radio" name="q17" /> Budget increase</label>
+        <label><input type="radio" name="q17" /> Feature freezing</label>
+      </div>
+
+      <div class="question">
+        <p>18. What is the first step in the business analysis process?</p>
+        <label><input type="radio" name="q18" /> Solution design</label>
+        <label><input type="radio" name="q18" /> Data modeling</label>
+        <label><input type="radio" name="q18" /> Requirement gathering</label>
+        <label><input type="radio" name="q18" /> Testing</label>
+      </div>
+
+      <div class="question">
+        <p>19. What is the output of a feasibility study?</p>
+        <label><input type="radio" name="q19" /> Project code</label>
+        <label><input type="radio" name="q19" /> Feasibility Report</label>
+        <label><input type="radio" name="q19" /> Use case diagram</label>
+        <label><input type="radio" name="q19" /> Test summary</label>
+      </div>
+
+      <div class="question">
+        <p>20. What is prototyping?</p>
+        <label
+          ><input type="radio" name="q20" /> Creating the final product</label
+        >
+        <label
+          ><input type="radio" name="q20" /> Creating a working model</label
+        >
+        <label
+          ><input type="radio" name="q20" /> Collecting stakeholder names</label
+        >
+        <label><input type="radio" name="q20" /> Writing test cases</label>
+      </div>
+
+      <button
+        type="button"
+        class="submit-btn"
+        onclick="alert('Submit functionality to be added with JavaScript')"
+      >
+        Submit
+      </button>
+    </form>
+  </body>
+</html>

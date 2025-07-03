@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #e8f0fe;
+        padding: 20px;
+      }
+      .quiz-container {
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        max-width: 800px;
+        margin: auto;
+      }
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+      .question {
+        margin-bottom: 15px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-top: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h2>jQuery Quiz (20 Questions)</h2>
+      <form id="quizForm">
+        <!-- Questions -->
+        <div class="question">
+          <p>1. What is jQuery?</p>
+          <label
+            ><input type="radio" name="q1" value="a" /> A JavaScript
+            framework</label
+          ><br />
+          <label
+            ><input type="radio" name="q1" value="b" /> A JavaScript
+            library</label
+          ><br />
+          <label
+            ><input type="radio" name="q1" value="c" /> A CSS framework</label
+          >
+        </div>
+
+        <div class="question">
+          <p>2. What symbol is used for jQuery?</p>
+          <label><input type="radio" name="q2" value="a" /> $</label><br />
+          <label><input type="radio" name="q2" value="b" /> #</label><br />
+          <label><input type="radio" name="q2" value="c" /> @</label>
+        </div>
+
+        <div class="question">
+          <p>
+            3. Which function is used to run code when the document is ready?
+          </p>
+          <label
+            ><input type="radio" name="q3" value="a" />
+            $(document).ready()</label
+          ><br />
+          <label
+            ><input type="radio" name="q3" value="b" /> $(body).onload()</label
+          ><br />
+          <label
+            ><input type="radio" name="q3" value="c" /> $(window).ready()</label
+          >
+        </div>
+
+        <div class="question">
+          <p>4. Which selector selects all &lt;p&gt; elements?</p>
+          <label><input type="radio" name="q4" value="a" /> $("p")</label><br />
+          <label><input type="radio" name="q4" value="b" /> $p</label><br />
+          <label><input type="radio" name="q4" value="c" /> $(p)</label>
+        </div>
+
+        <div class="question">
+          <p>5. Which method hides selected elements?</p>
+          <label><input type="radio" name="q5" value="a" /> hide()</label><br />
+          <label><input type="radio" name="q5" value="b" /> invisible()</label
+          ><br />
+          <label
+            ><input type="radio" name="q5" value="c" /> displayNone()</label
+          >
+        </div>
+
+        <div class="question">
+          <p>6. What does the `fadeIn()` method do?</p>
+          <label
+            ><input type="radio" name="q6" value="a" /> Fades in hidden
+            elements</label
+          ><br />
+          <label
+            ><input type="radio" name="q6" value="b" /> Hides visible
+            elements</label
+          ><br />
+          <label
+            ><input type="radio" name="q6" value="c" /> Slides the element
+            down</label
+          >
+        </div>
+
+        <div class="question">
+          <p>7. Which method is used to get the HTML content of an element?</p>
+          <label><input type="radio" name="q7" value="a" /> html()</label><br />
+          <label><input type="radio" name="q7" value="b" /> getHtml()</label
+          ><br />
+          <label><input type="radio" name="q7" value="c" /> innerHtml()</label>
+        </div>
+
+        <div class="question">
+          <p>8. What does `$(this)` refer to?</p>
+          <label
+            ><input type="radio" name="q8" value="a" /> The current HTML
+            element</label
+          ><br />
+          <label
+            ><input type="radio" name="q8" value="b" /> The entire
+            document</label
+          ><br />
+          <label
+            ><input type="radio" name="q8" value="c" /> The parent
+            element</label
+          >
+        </div>
+
+        <div class="question">
+          <p>9. How do you add a class to an element in jQuery?</p>
+          <label><input type="radio" name="q9" value="a" /> .addClass()</label
+          ><br />
+          <label><input type="radio" name="q9" value="b" /> .setClass()</label
+          ><br />
+          <label><input type="radio" name="q9" value="c" /> .add()</label>
+        </div>
+
+        <div class="question">
+          <p>10. Which method removes an element?</p>
+          <label><input type="radio" name="q10" value="a" /> remove()</label
+          ><br />
+          <label><input type="radio" name="q10" value="b" /> delete()</label
+          ><br />
+          <label><input type="radio" name="q10" value="c" /> erase()</label>
+        </div>
+
+        <!-- Q11–Q20 -->
+        <div class="question">
+          <p>11. How do you get the value of an input field?</p>
+          <label><input type="radio" name="q11" value="a" /> val()</label><br />
+          <label><input type="radio" name="q11" value="b" /> getValue()</label
+          ><br />
+          <label><input type="radio" name="q11" value="c" /> value()</label>
+        </div>
+
+        <div class="question">
+          <p>12. What does `slideToggle()` do?</p>
+          <label
+            ><input type="radio" name="q12" value="a" /> Toggles slide
+            up/down</label
+          ><br />
+          <label
+            ><input type="radio" name="q12" value="b" /> Fades element</label
+          ><br />
+          <label
+            ><input type="radio" name="q12" value="c" /> Hides
+            immediately</label
+          >
+        </div>
+
+        <div class="question">
+          <p>13. Which method is used to handle a click event?</p>
+          <label><input type="radio" name="q13" value="a" /> click()</label
+          ><br />
+          <label><input type="radio" name="q13" value="b" /> onClick()</label
+          ><br />
+          <label><input type="radio" name="q13" value="c" /> press()</label>
+        </div>
+
+        <div class="question">
+          <p>14. What is chaining in jQuery?</p>
+          <label
+            ><input type="radio" name="q14" value="a" /> Running multiple
+            methods on the same selector</label
+          ><br />
+          <label
+            ><input type="radio" name="q14" value="b" /> Calling plugins</label
+          ><br />
+          <label
+            ><input type="radio" name="q14" value="c" /> Creating loops</label
+          >
+        </div>
+
+        <div class="question">
+          <p>15. Which jQuery function prevents default behavior?</p>
+          <label
+            ><input type="radio" name="q15" value="a" />
+            event.preventDefault()</label
+          ><br />
+          <label><input type="radio" name="q15" value="b" /> event.stop()</label
+          ><br />
+          <label
+            ><input type="radio" name="q15" value="c" /> event.block()</label
+          >
+        </div>
+
+        <div class="question">
+          <p>16. Which function runs only once when a click event occurs?</p>
+          <label><input type="radio" name="q16" value="a" /> one()</label><br />
+          <label><input type="radio" name="q16" value="b" /> once()</label
+          ><br />
+          <label
+            ><input type="radio" name="q16" value="c" /> singleClick()</label
+          >
+        </div>
+
+        <div class="question">
+          <p>17. jQuery is written in:</p>
+          <label><input type="radio" name="q17" value="a" /> JavaScript</label
+          ><br />
+          <label><input type="radio" name="q17" value="b" /> TypeScript</label
+          ><br />
+          <label><input type="radio" name="q17" value="c" /> Python</label>
+        </div>
+
+        <div class="question">
+          <p>18. How do you fade out an element slowly?</p>
+          <label
+            ><input type="radio" name="q18" value="a" /> fadeOut("slow")</label
+          ><br />
+          <label><input type="radio" name="q18" value="b" /> fade("slow")</label
+          ><br />
+          <label><input type="radio" name="q18" value="c" /> slowOut()</label>
+        </div>
+
+        <div class="question">
+          <p>19. Which CDN is used to include jQuery?</p>
+          <label
+            ><input type="radio" name="q19" value="a" />
+            https://code.jquery.com</label
+          ><br />
+          <label
+            ><input type="radio" name="q19" value="b" />
+            https://cdn.jquery.net</label
+          ><br />
+          <label
+            ><input type="radio" name="q19" value="c" />
+            https://jquery.js</label
+          >
+        </div>
+
+        <div class="question">
+          <p>20. Which jQuery method changes the CSS of an element?</p>
+          <label><input type="radio" name="q20" value="a" /> css()</label><br />
+          <label><input type="radio" name="q20" value="b" /> style()</label
+          ><br />
+          <label><input type="radio" name="q20" value="c" /> setCss()</label>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+        <div id="result"></div>
+      </form>
+    </div>
+
+    <script>
+      const answers = {
+        q1: "b",
+        q2: "a",
+        q3: "a",
+        q4: "a",
+        q5: "a",
+        q6: "a",
+        q7: "a",
+        q8: "a",
+        q9: "a",
+        q10: "a",
+        q11: "a",
+        q12: "a",
+        q13: "a",
+        q14: "a",
+        q15: "a",
+        q16: "a",
+        q17: "a",
+        q18: "a",
+        q19: "a",
+        q20: "a",
+      };
+
+      function checkAnswers() {
+        let score = 0;
+        for (let i = 1; i <= 20; i++) {
+          let q = document.querySelector(`input[name="q${i}"]:checked`);
+          if (q && q.value === answers[`q${i}`]) {
+            score++;
+          }
+        }
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of 20`;
+      }
+    </script>
+  </body>
+</html>

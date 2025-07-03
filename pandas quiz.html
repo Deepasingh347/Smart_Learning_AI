@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pandas Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f2f2f2;
+      }
+      .quiz-container {
+        max-width: 800px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      .question {
+        color: #333;
+      }
+      .question {
+        margin-top: 15px;
+      }
+      button {
+        padding: 10px 20px;
+        border: none;
+        background: #28a745;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      button:hover {
+        background: #218838;
+      }
+      .result {
+        margin-top: 20px;
+      }
+      #timer {
+        font-weight: bold;
+        color: #dc3545;
+        float: right;
+      }
+      .correct {
+        color: green;
+      }
+      .wrong {
+        color: red;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h1>Pandas Quiz <span id="timer">Time Left: 10:00</span></h1>
+      <form id="quizForm">
+        <div id="quiz"></div>
+        <button type="submit">Submit Quiz</button>
+      </form>
+      <div class="result" id="result"></div>
+      <a id="certificateLink" style="display: none" download="certificate.txt"
+        >🎓 Download Certificate</a
+      >
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. What is Pandas primarily used for?",
+          options: [
+            "Data analysis and manipulation",
+            "Game development",
+            "Image processing",
+            "Web development",
+          ],
+          answer: 0,
+        },
+        {
+          q: "2. What is the primary data structure in Pandas?",
+          options: ["DataTable", "DataFrame", "TableSet", "Array"],
+          answer: 1,
+        },
+        {
+          q: "3. Which method reads a CSV file?",
+          options: [
+            "pandas.read()",
+            "pandas.load_csv()",
+            "pandas.read_csv()",
+            "pandas.get_csv()",
+          ],
+          answer: 2,
+        },
+        {
+          q: "4. What does `df.head()` return?",
+          options: ["Last 5 rows", "Random 5 rows", "First 5 rows", "All rows"],
+          answer: 2,
+        },
+        {
+          q: "5. How to get summary statistics in Pandas?",
+          options: [
+            "df.describe()",
+            "df.summary()",
+            "df.stats()",
+            "df.statistics()",
+          ],
+          answer: 0,
+        },
+        {
+          q: "6. Which of these is not a Pandas function?",
+          options: ["merge()", "groupby()", "pivot_table()", "combine_table()"],
+          answer: 3,
+        },
+        {
+          q: "7. What does `df.info()` provide?",
+          options: [
+            "Only column names",
+            "Full data",
+            "Summary info about DataFrame",
+            "Only null values",
+          ],
+          answer: 2,
+        },
+        {
+          q: "8. Which keyword is used for missing data in Pandas?",
+          options: ["undefined", "null", "None", "NaN"],
+          answer: 3,
+        },
+        {
+          q: "9. How do you rename columns in a DataFrame?",
+          options: [
+            "df.rename()",
+            "df.columns.rename()",
+            "df.rename_column()",
+            "df.change_name()",
+          ],
+          answer: 0,
+        },
+        {
+          q: "10. Which method removes rows with missing data?",
+          options: ["dropna()", "remove_nulls()", "delete_na()", "remove()"],
+          answer: 0,
+        },
+        {
+          q: "11. What is the default axis for dropping rows in `drop()`?",
+          options: ["axis=1", "axis=0", "axis=None", "axis='both'"],
+          answer: 1,
+        },
+        {
+          q: "12. Which function changes the index of a DataFrame?",
+          options: [
+            "set_index()",
+            "change_index()",
+            "modify_index()",
+            "replace_index()",
+          ],
+          answer: 0,
+        },
+        {
+          q: "13. How to reset the index in Pandas?",
+          options: ["reset()", "reindex()", "reset_index()", "index_reset()"],
+          answer: 2,
+        },
+        {
+          q: "14. What does `df.shape` return?",
+          options: [
+            "Data types",
+            "Memory size",
+            "Dimensions of the DataFrame",
+            "Only columns",
+          ],
+          answer: 2,
+        },
+        {
+          q: "15. How to select rows based on condition?",
+          options: [
+            "df.select()",
+            "df.filter()",
+            "df[df['col'] > 5]",
+            "df.choose()",
+          ],
+          answer: 2,
+        },
+        {
+          q: "16. How to concatenate DataFrames?",
+          options: [
+            "pandas.combine()",
+            "pandas.concat()",
+            "pandas.append_all()",
+            "pandas.add_df()",
+          ],
+          answer: 1,
+        },
+        {
+          q: "17. What will `df.isnull().sum()` do?",
+          options: [
+            "Count all missing values per column",
+            "Drop nulls",
+            "Fill nulls",
+            "Replace data",
+          ],
+          answer: 0,
+        },
+        {
+          q: "18. Which function replaces null values?",
+          options: ["dropna()", "fillna()", "replacena()", "insertna()"],
+          answer: 1,
+        },
+        {
+          q: "19. How to sort DataFrame by column?",
+          options: [
+            "df.sort_values('col')",
+            "df.sort()",
+            "df.order_by('col')",
+            "df.sort_column()",
+          ],
+          answer: 0,
+        },
+        {
+          q: "20. Which version of Pandas introduced `DataFrame.explode()`?",
+          options: ["0.24", "1.0", "0.25", "0.21"],
+          answer: 2,
+        },
+      ];
+
+      const quizEl = document.getElementById("quiz");
+      const form = document.getElementById("quizForm");
+      const resultEl = document.getElementById("result");
+      const certLink = document.getElementById("certificateLink");
+      const timerEl = document.getElementById("timer");
+
+      let timeLeft = 600; // 10 minutes
+
+      function startTimer() {
+        const timer = setInterval(() => {
+          if (timeLeft <= 0) {
+            clearInterval(timer);
+            form.requestSubmit();
+          } else {
+            const min = Math.floor(timeLeft / 60);
+            const sec = timeLeft % 60;
+            timerEl.textContent = `Time Left: ${min}:${
+              sec < 10 ? "0" + sec : sec
+            }`;
+            timeLeft--;
+          }
+        }, 1000);
+      }
+
+      questions.forEach((q, index) => {
+        const div = document.createElement("div");
+        div.classList.add("question");
+        div.innerHTML = `<p>${q.q}</p>`;
+        q.options.forEach((option, i) => {
+          div.innerHTML += `
+        <label><input type="radio" name="q${index}" value="${i}"/> ${option}</label><br/>
+      `;
+        });
+        quizEl.appendChild(div);
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let score = 0;
+        const formData = new FormData(form);
+        const answers = questions.map((q, i) => Number(formData.get(`q${i}`)));
+
+        quizEl.querySelectorAll(".question").forEach((qDiv, i) => {
+          const selected = answers[i];
+          const correct = questions[i].answer;
+          const labels = qDiv.querySelectorAll("label");
+          labels.forEach((label, j) => {
+            if (j === correct) label.classList.add("correct");
+            else if (j === selected) label.classList.add("wrong");
+          });
+          if (selected === correct) score++;
+        });
+
+        const percent = Math.round((score / questions.length) * 100);
+        resultEl.innerHTML = `<h2>Your Score: ${score}/20 (${percent}%)</h2>`;
+
+        if (percent >= 80) {
+          const certText = `Certificate of Achievement\n\nThis certifies that you have successfully completed the Pandas Quiz with a score of ${percent}%.\n\nCongratulations!`;
+          const blob = new Blob([certText], { type: "text/plain" });
+          certLink.href = URL.createObjectURL(blob);
+          certLink.style.display = "block";
+        }
+      });
+
+      startTimer();
+    </script>
+  </body>
+</html>

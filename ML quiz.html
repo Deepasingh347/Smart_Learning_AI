@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Machine Learning Quiz - SMART LEARNING AI</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f6ff;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .question {
+        background: #fff;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+      }
+      .question h3 {
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin: 5px 0;
+      }
+      button {
+        display: block;
+        margin: 30px auto;
+        padding: 10px 25px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      #result {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #28a745;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Machine Learning Quiz (20 Questions)</h1>
+
+    <form id="quizForm">
+      <!-- Questions 1–10 -->
+      <div class="question">
+        <h3>1. What is Machine Learning?</h3>
+        <label
+          ><input type="radio" name="q1" value="a" />Learning programming
+          manually</label
+        >
+        <label
+          ><input type="radio" name="q1" value="b" />Systems that improve from
+          experience without being explicitly programmed</label
+        >
+        <label
+          ><input type="radio" name="q1" value="c" />Learning database
+          management</label
+        >
+        <label
+          ><input type="radio" name="q1" value="d" />Learning web
+          development</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>2. Which of the following is a type of machine learning?</h3>
+        <label
+          ><input type="radio" name="q2" value="a" />Unsupervised
+          learning</label
+        >
+        <label
+          ><input type="radio" name="q2" value="b" />Reinforcement
+          learning</label
+        >
+        <label
+          ><input type="radio" name="q2" value="c" />Supervised learning</label
+        >
+        <label
+          ><input type="radio" name="q2" value="d" />All of the above</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>3. Which algorithm is used for classification problems?</h3>
+        <label
+          ><input type="radio" name="q3" value="a" />Linear Regression</label
+        >
+        <label
+          ><input type="radio" name="q3" value="b" />Logistic Regression</label
+        >
+        <label><input type="radio" name="q3" value="c" />K-Means</label>
+        <label><input type="radio" name="q3" value="d" />PCA</label>
+      </div>
+
+      <div class="question">
+        <h3>4. What is overfitting?</h3>
+        <label
+          ><input type="radio" name="q4" value="a" />Model fits the training
+          data too well but performs poorly on test data</label
+        >
+        <label
+          ><input type="radio" name="q4" value="b" />Model performs well on all
+          data</label
+        >
+        <label
+          ><input type="radio" name="q4" value="c" />Model performs poorly on
+          training data</label
+        >
+        <label
+          ><input type="radio" name="q4" value="d" />Model accuracy is
+          high</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>5. Which library is commonly used for ML in Python?</h3>
+        <label><input type="radio" name="q5" value="a" />Scikit-learn</label>
+        <label><input type="radio" name="q5" value="b" />Matplotlib</label>
+        <label><input type="radio" name="q5" value="c" />BeautifulSoup</label>
+        <label><input type="radio" name="q5" value="d" />Flask</label>
+      </div>
+
+      <div class="question">
+        <h3>6. What is a confusion matrix used for?</h3>
+        <label><input type="radio" name="q6" value="a" />Data encryption</label>
+        <label
+          ><input type="radio" name="q6" value="b" />Model visualization</label
+        >
+        <label
+          ><input type="radio" name="q6" value="c" />Evaluating classification
+          model performance</label
+        >
+        <label><input type="radio" name="q6" value="d" />Plotting charts</label>
+      </div>
+
+      <div class="question">
+        <h3>7. What is the purpose of feature scaling?</h3>
+        <label
+          ><input type="radio" name="q7" value="a" />Increase dataset
+          size</label
+        >
+        <label
+          ><input type="radio" name="q7" value="b" />Reduce overfitting</label
+        >
+        <label
+          ><input type="radio" name="q7" value="c" />Normalize data to the same
+          scale</label
+        >
+        <label
+          ><input type="radio" name="q7" value="d" />Convert data to CSV</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>8. What is the output of a regression algorithm?</h3>
+        <label><input type="radio" name="q8" value="a" />Discrete values</label>
+        <label><input type="radio" name="q8" value="b" />Class labels</label>
+        <label
+          ><input type="radio" name="q8" value="c" />Continuous values</label
+        >
+        <label><input type="radio" name="q8" value="d" />Clusters</label>
+      </div>
+
+      <div class="question">
+        <h3>9. What is KNN?</h3>
+        <label><input type="radio" name="q9" value="a" />K-Means Nearest</label>
+        <label
+          ><input type="radio" name="q9" value="b" />K-Nearest Neighbors</label
+        >
+        <label
+          ><input type="radio" name="q9" value="c" />Kernel Neural Net</label
+        >
+        <label
+          ><input type="radio" name="q9" value="d" />K-Measured Network</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>10. Which algorithm is used for clustering?</h3>
+        <label
+          ><input type="radio" name="q10" value="a" />Linear Regression</label
+        >
+        <label><input type="radio" name="q10" value="b" />Decision Tree</label>
+        <label><input type="radio" name="q10" value="c" />K-Means</label>
+        <label><input type="radio" name="q10" value="d" />Naive Bayes</label>
+      </div>
+
+      <!-- Questions 11–20 via JavaScript -->
+      <script>
+        const mlQs = [
+          [
+            "What is the main goal of supervised learning?",
+            [
+              "Predict outcomes based on labeled data",
+              "Find hidden patterns",
+              "Cluster similar data",
+              "Reinforce actions",
+            ],
+          ],
+          [
+            "Which metric is used for regression accuracy?",
+            ["Accuracy", "Precision", "RMSE", "Recall"],
+          ],
+          [
+            "Which of the following is NOT a supervised learning algorithm?",
+            ["SVM", "Linear Regression", "K-Means", "Decision Tree"],
+          ],
+          [
+            "Which algorithm is best for spam email classification?",
+            ["K-Means", "Linear Regression", "Naive Bayes", "PCA"],
+          ],
+          [
+            "What is bias in a model?",
+            ["Random error", "Error due to assumptions", "Noise", "Outliers"],
+          ],
+          [
+            "What is variance?",
+            [
+              "Error from too much flexibility",
+              "Noise level",
+              "Input variable",
+              "Missing values",
+            ],
+          ],
+          [
+            "What is cross-validation?",
+            [
+              "Test training method",
+              "Training evaluation technique",
+              "Data visualization",
+              "Feature selection",
+            ],
+          ],
+          [
+            "Which is an ensemble method?",
+            ["SVM", "Bagging", "Logistic Regression", "K-Means"],
+          ],
+          [
+            "Which of the following reduces overfitting?",
+            [
+              "Feature scaling",
+              "Gradient descent",
+              "Regularization",
+              "Data shuffling",
+            ],
+          ],
+          [
+            "Which is used to reduce dimensionality?",
+            ["Regression", "Classification", "Clustering", "PCA"],
+          ],
+        ];
+        const mlAns = ["a", "c", "c", "c", "b", "a", "b", "b", "c", "d"];
+        for (let i = 11; i <= 20; i++) {
+          document.write(
+            `<div class="question"><h3>${i}. ${mlQs[i - 11][0]}</h3>`
+          );
+          ["a", "b", "c", "d"].forEach((opt, j) => {
+            document.write(
+              `<label><input type="radio" name="q${i}" value="${opt}">${
+                mlQs[i - 11][1][j]
+              }</label>`
+            );
+          });
+          document.write(`</div>`);
+        }
+      </script>
+
+      <button type="button" onclick="checkAnswers()">Submit Quiz</button>
+      <div id="result"></div>
+    </form>
+
+    <script>
+      const answers = {
+        q1: "b",
+        q2: "d",
+        q3: "b",
+        q4: "a",
+        q5: "a",
+        q6: "c",
+        q7: "c",
+        q8: "c",
+        q9: "b",
+        q10: "c",
+        q11: "a",
+        q12: "c",
+        q13: "c",
+        q14: "c",
+        q15: "b",
+        q16: "a",
+        q17: "b",
+        q18: "b",
+        q19: "c",
+        q20: "d",
+      };
+
+      function checkAnswers() {
+        let score = 0;
+        for (let i = 1; i <= 20; i++) {
+          const selected = document.querySelector(
+            `input[name="q${i}"]:checked`
+          );
+          if (selected && selected.value === answers[`q${i}`]) {
+            score++;
+          }
+        }
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of 20`;
+      }
+    </script>
+  </body>
+</html>

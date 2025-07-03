@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Science Quiz - SMART LEARNING AI</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #eef5f9;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .question {
+        background: #fff;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+      .question h3 {
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin: 5px 0;
+      }
+      button {
+        display: block;
+        margin: 30px auto;
+        padding: 10px 25px;
+        font-size: 16px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      #result {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #28a745;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Data Science Quiz (20 Questions)</h1>
+
+    <form id="quizForm">
+      <!-- Questions 1–10 -->
+      <div class="question">
+        <h3>1. What is Data Science?</h3>
+        <label
+          ><input type="radio" name="q1" value="a" />A programming
+          language</label
+        >
+        <label
+          ><input type="radio" name="q1" value="b" />A database system</label
+        >
+        <label
+          ><input type="radio" name="q1" value="c" />A field that uses methods
+          to extract insights from data</label
+        >
+        <label
+          ><input type="radio" name="q1" value="d" />Only about
+          statistics</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>2. Which language is most commonly used in Data Science?</h3>
+        <label><input type="radio" name="q2" value="a" />C++</label>
+        <label><input type="radio" name="q2" value="b" />Python</label>
+        <label><input type="radio" name="q2" value="c" />Java</label>
+        <label><input type="radio" name="q2" value="d" />HTML</label>
+      </div>
+
+      <div class="question">
+        <h3>3. Which of these is a Python library used for data analysis?</h3>
+        <label><input type="radio" name="q3" value="a" />Django</label>
+        <label><input type="radio" name="q3" value="b" />Pandas</label>
+        <label><input type="radio" name="q3" value="c" />Flask</label>
+        <label><input type="radio" name="q3" value="d" />NumpyJS</label>
+      </div>
+
+      <div class="question">
+        <h3>4. What is the full form of CSV?</h3>
+        <label
+          ><input type="radio" name="q4" value="a" />Common Separated
+          Value</label
+        >
+        <label
+          ><input type="radio" name="q4" value="b" />Comma Separated
+          Values</label
+        >
+        <label
+          ><input type="radio" name="q4" value="c" />Column Separated
+          Variable</label
+        >
+        <label
+          ><input type="radio" name="q4" value="d" />Comma Structured
+          Value</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>5. What is data visualization?</h3>
+        <label><input type="radio" name="q5" value="a" />Encrypting data</label>
+        <label
+          ><input type="radio" name="q5" value="b" />Storing data in
+          databases</label
+        >
+        <label
+          ><input type="radio" name="q5" value="c" />Representing data using
+          charts or graphs</label
+        >
+        <label
+          ><input type="radio" name="q5" value="d" />Programming the
+          backend</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>6. What is the use of matplotlib in Python?</h3>
+        <label><input type="radio" name="q6" value="a" />Building APIs</label>
+        <label
+          ><input type="radio" name="q6" value="b" />Data visualization</label
+        >
+        <label
+          ><input type="radio" name="q6" value="c" />Statistical analysis</label
+        >
+        <label><input type="radio" name="q6" value="d" />Data cleaning</label>
+      </div>
+
+      <div class="question">
+        <h3>7. What does a Data Scientist do?</h3>
+        <label><input type="radio" name="q7" value="a" />Build websites</label>
+        <label
+          ><input type="radio" name="q7" value="b" />Design databases</label
+        >
+        <label
+          ><input type="radio" name="q7" value="c" />Extract insights from
+          data</label
+        >
+        <label
+          ><input type="radio" name="q7" value="d" />Manage operating
+          systems</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>8. What is overfitting in machine learning?</h3>
+        <label
+          ><input type="radio" name="q8" value="a" />Model performs well on test
+          data</label
+        >
+        <label
+          ><input type="radio" name="q8" value="b" />Model performs well on
+          training data but poorly on new data</label
+        >
+        <label
+          ><input type="radio" name="q8" value="c" />Model performs poorly on
+          all data</label
+        >
+        <label
+          ><input type="radio" name="q8" value="d" />Model is too simple</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>9. Which of the following is a classification algorithm?</h3>
+        <label
+          ><input type="radio" name="q9" value="a" />Linear Regression</label
+        >
+        <label><input type="radio" name="q9" value="b" />K-Means</label>
+        <label
+          ><input type="radio" name="q9" value="c" />Logistic Regression</label
+        >
+        <label><input type="radio" name="q9" value="d" />PCA</label>
+      </div>
+
+      <div class="question">
+        <h3>10. What does the term “Big Data” refer to?</h3>
+        <label
+          ><input type="radio" name="q10" value="a" />Small data sets</label
+        >
+        <label
+          ><input type="radio" name="q10" value="b" />Data that can be stored in
+          Excel</label
+        >
+        <label
+          ><input type="radio" name="q10" value="c" />Extremely large and
+          complex data sets</label
+        >
+        <label
+          ><input type="radio" name="q10" value="d" />Data in CSV format</label
+        >
+      </div>
+
+      <!-- Questions 11–20 using JS -->
+      <script>
+        const dsQs = [
+          [
+            "Which of the following is used for data wrangling?",
+            ["Pandas", "Django", "NumPy", "TensorFlow"],
+          ],
+          [
+            "What is supervised learning?",
+            [
+              "Learning without labels",
+              "Learning from labeled data",
+              "Self-learning",
+              "Unorganized data training",
+            ],
+          ],
+          [
+            "Which chart is used to compare categories?",
+            ["Bar Chart", "Line Chart", "Pie Chart", "Heat Map"],
+          ],
+          [
+            "What does NumPy handle?",
+            [
+              "Text data",
+              "3D graphics",
+              "Numerical computation",
+              "HTML parsing",
+            ],
+          ],
+          [
+            "What does 'model accuracy' mean?",
+            [
+              "Model performance",
+              "Training time",
+              "Coding complexity",
+              "Data structure",
+            ],
+          ],
+          [
+            "Which of the following is used for deep learning?",
+            ["Seaborn", "Matplotlib", "TensorFlow", "Scikit-learn"],
+          ],
+          [
+            "Which technique reduces dimensionality?",
+            ["PCA", "SVM", "CNN", "RNN"],
+          ],
+          [
+            "Which of these is NOT a Python library?",
+            ["Keras", "NumPy", "Scikit-learn", "Laravel"],
+          ],
+          [
+            "What is the first step in a data science project?",
+            [
+              "Data Modeling",
+              "Data Collection",
+              "Model Deployment",
+              "Training",
+            ],
+          ],
+          [
+            "What is a Jupyter Notebook?",
+            [
+              "Data visualization tool",
+              "IDE for Python",
+              "Web-based tool for code and results",
+              "Database",
+            ],
+          ],
+        ];
+        const dsAns = ["a", "b", "a", "c", "a", "c", "a", "d", "b", "c"];
+        for (let i = 11; i <= 20; i++) {
+          document.write(
+            `<div class="question"><h3>${i}. ${dsQs[i - 11][0]}</h3>`
+          );
+          ["a", "b", "c", "d"].forEach((opt, j) => {
+            document.write(
+              `<label><input type="radio" name="q${i}" value="${opt}">${
+                dsQs[i - 11][1][j]
+              }</label>`
+            );
+          });
+          document.write(`</div>`);
+        }
+      </script>
+
+      <button type="button" onclick="checkAnswers()">Submit Quiz</button>
+      <div id="result"></div>
+    </form>
+
+    <script>
+      const answers = {
+        q1: "c",
+        q2: "b",
+        q3: "b",
+        q4: "b",
+        q5: "c",
+        q6: "b",
+        q7: "c",
+        q8: "b",
+        q9: "c",
+        q10: "c",
+        q11: "a",
+        q12: "b",
+        q13: "a",
+        q14: "c",
+        q15: "a",
+        q16: "c",
+        q17: "a",
+        q18: "d",
+        q19: "b",
+        q20: "c",
+      };
+
+      function checkAnswers() {
+        let score = 0;
+        for (let i = 1; i <= 20; i++) {
+          const selected = document.querySelector(
+            `input[name="q${i}"]:checked`
+          );
+          if (selected && selected.value === answers[`q${i}`]) {
+            score++;
+          }
+        }
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of 20`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MongoDB Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f9ff;
+        margin: 0;
+        padding: 20px;
+      }
+      .quiz-container {
+        max-width: 800px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px #ccc;
+      }
+      h2 {
+        text-align: center;
+        color: #0a3c59;
+      }
+      .question {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        padding: 5px 10px;
+        border-radius: 6px;
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+      input[type="radio"] {
+        margin-right: 10px;
+      }
+      .correct {
+        background-color: #d4edda;
+      }
+      .wrong {
+        background-color: #f8d7da;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #007acc;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+      #timer {
+        text-align: right;
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #d9534f;
+      }
+      @media screen and (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        .quiz-container {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h2>MongoDB Quiz</h2>
+      <div id="timer">Time left: <span id="time">10:00</span></div>
+      <form id="quizForm">
+        <!-- 20 QUESTIONS -->
+        <div class="question">
+          <p>1. What is MongoDB?</p>
+          <label
+            ><input type="radio" name="q1" value="a" />Relational
+            database</label
+          >
+          <label
+            ><input type="radio" name="q1" value="b" />NoSQL database</label
+          >
+          <label
+            ><input type="radio" name="q1" value="c" />Graph database</label
+          >
+        </div>
+        <div class="question">
+          <p>2. Which format does MongoDB store data in?</p>
+          <label><input type="radio" name="q2" value="a" />CSV</label>
+          <label><input type="radio" name="q2" value="b" />JSON</label>
+          <label><input type="radio" name="q2" value="c" />BSON</label>
+        </div>
+        <div class="question">
+          <p>3. What is a collection in MongoDB?</p>
+          <label
+            ><input type="radio" name="q3" value="a" />A group of tables</label
+          >
+          <label
+            ><input type="radio" name="q3" value="b" />A group of rows</label
+          >
+          <label
+            ><input type="radio" name="q3" value="c" />A group of
+            documents</label
+          >
+        </div>
+        <div class="question">
+          <p>4. What command is used to insert one document?</p>
+          <label><input type="radio" name="q4" value="a" />insertOne()</label>
+          <label><input type="radio" name="q4" value="b" />insert()</label>
+          <label><input type="radio" name="q4" value="c" />addDocument()</label>
+        </div>
+        <div class="question">
+          <p>5. Which function fetches all documents?</p>
+          <label><input type="radio" name="q5" value="a" />findAll()</label>
+          <label><input type="radio" name="q5" value="b" />getAll()</label>
+          <label><input type="radio" name="q5" value="c" />find()</label>
+        </div>
+        <div class="question">
+          <p>6. What is the default _id field in MongoDB?</p>
+          <label><input type="radio" name="q6" value="a" />String</label>
+          <label><input type="radio" name="q6" value="b" />ObjectId</label>
+          <label><input type="radio" name="q6" value="c" />Number</label>
+        </div>
+        <div class="question">
+          <p>7. Which operator is used for "greater than"?</p>
+          <label><input type="radio" name="q7" value="a" />$lt</label>
+          <label><input type="radio" name="q7" value="b" />$gt</label>
+          <label><input type="radio" name="q7" value="c" />$gte</label>
+        </div>
+        <div class="question">
+          <p>8. Which command deletes multiple documents?</p>
+          <label><input type="radio" name="q8" value="a" />deleteOne()</label>
+          <label><input type="radio" name="q8" value="b" />deleteMany()</label>
+          <label><input type="radio" name="q8" value="c" />removeAll()</label>
+        </div>
+        <div class="question">
+          <p>9. What does MongoDB use for indexing?</p>
+          <label><input type="radio" name="q9" value="a" />Hash table</label>
+          <label><input type="radio" name="q9" value="b" />B-tree</label>
+          <label><input type="radio" name="q9" value="c" />Binary tree</label>
+        </div>
+        <div class="question">
+          <p>10. Which method updates a single document?</p>
+          <label><input type="radio" name="q10" value="a" />updateOne()</label>
+          <label><input type="radio" name="q10" value="b" />updateAll()</label>
+          <label><input type="radio" name="q10" value="c" />modifyOne()</label>
+        </div>
+        <div class="question">
+          <p>11. Which operator performs logical AND?</p>
+          <label><input type="radio" name="q11" value="a" />$or</label>
+          <label><input type="radio" name="q11" value="b" />$and</label>
+          <label><input type="radio" name="q11" value="c" />$not</label>
+        </div>
+        <div class="question">
+          <p>12. What does aggregation do in MongoDB?</p>
+          <label
+            ><input type="radio" name="q12" value="a" />Delete
+            collections</label
+          >
+          <label
+            ><input type="radio" name="q12" value="b" />Combine values and
+            perform operations</label
+          >
+          <label
+            ><input type="radio" name="q12" value="c" />Sort data only</label
+          >
+        </div>
+        <div class="question">
+          <p>13. Which method limits result output?</p>
+          <label><input type="radio" name="q13" value="a" />filter()</label>
+          <label><input type="radio" name="q13" value="b" />range()</label>
+          <label><input type="radio" name="q13" value="c" />limit()</label>
+        </div>
+        <div class="question">
+          <p>14. Which is a valid MongoDB data type?</p>
+          <label><input type="radio" name="q14" value="a" />int64</label>
+          <label><input type="radio" name="q14" value="b" />decimal</label>
+          <label><input type="radio" name="q14" value="c" />date</label>
+        </div>
+        <div class="question">
+          <p>15. How are relationships handled in MongoDB?</p>
+          <label><input type="radio" name="q15" value="a" />Foreign keys</label>
+          <label
+            ><input type="radio" name="q15" value="b" />Embedding &
+            referencing</label
+          >
+          <label><input type="radio" name="q15" value="c" />Triggers</label>
+        </div>
+        <div class="question">
+          <p>16. What does $match do in aggregation?</p>
+          <label
+            ><input type="radio" name="q16" value="a" />Join documents</label
+          >
+          <label
+            ><input type="radio" name="q16" value="b" />Filters documents</label
+          >
+          <label
+            ><input type="radio" name="q16" value="c" />Counts documents</label
+          >
+        </div>
+        <div class="question">
+          <p>17. Which command shows all databases?</p>
+          <label><input type="radio" name="q17" value="a" />show dbs</label>
+          <label
+            ><input type="radio" name="q17" value="b" />list databases</label
+          >
+          <label><input type="radio" name="q17" value="c" />get dbs</label>
+        </div>
+        <div class="question">
+          <p>18. Which is used to connect MongoDB in Node.js?</p>
+          <label><input type="radio" name="q18" value="a" />mongoose</label>
+          <label><input type="radio" name="q18" value="b" />mongoconnect</label>
+          <label><input type="radio" name="q18" value="c" />sqlconnect</label>
+        </div>
+        <div class="question">
+          <p>19. Which command creates a new collection?</p>
+          <label><input type="radio" name="q19" value="a" />create()</label>
+          <label
+            ><input
+              type="radio"
+              name="q19"
+              value="b"
+            />createCollection()</label
+          >
+          <label
+            ><input type="radio" name="q19" value="c" />newCollection()</label
+          >
+        </div>
+        <div class="question">
+          <p>20. MongoDB is:</p>
+          <label><input type="radio" name="q20" value="a" />Schema-less</label>
+          <label
+            ><input type="radio" name="q20" value="b" />Strictly
+            structured</label
+          >
+          <label><input type="radio" name="q20" value="c" />Tabular only</label>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+        <div id="result"></div>
+        <div id="certLink" style="display: none; margin-top: 15px">
+          <a id="downloadCert" href="#" onclick="generateCertificate()"
+            >🎓 Download Certificate</a
+          >
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const correctAnswers = {
+        q1: "b",
+        q2: "c",
+        q3: "c",
+        q4: "a",
+        q5: "c",
+        q6: "b",
+        q7: "b",
+        q8: "b",
+        q9: "b",
+        q10: "a",
+        q11: "b",
+        q12: "b",
+        q13: "c",
+        q14: "c",
+        q15: "b",
+        q16: "b",
+        q17: "a",
+        q18: "a",
+        q19: "b",
+        q20: "a",
+      };
+
+      let timer;
+      let totalSeconds = 600;
+
+      function startTimer() {
+        timer = setInterval(() => {
+          totalSeconds--;
+          let min = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
+          let sec = String(totalSeconds % 60).padStart(2, "0");
+          document.getElementById("time").textContent = `${min}:${sec}`;
+          if (totalSeconds <= 0) {
+            clearInterval(timer);
+            submitQuiz();
+          }
+        }, 1000);
+      }
+
+      function submitQuiz() {
+        clearInterval(timer);
+        let score = 0;
+        const form = document.getElementById("quizForm");
+        for (let q in correctAnswers) {
+          const selected = form.querySelector(`input[name="${q}"]:checked`);
+          const options = form.querySelectorAll(`input[name="${q}"]`);
+          options.forEach((opt) => {
+            opt.parentElement.classList.remove("correct", "wrong");
+            if (opt.value === correctAnswers[q]) {
+              opt.parentElement.classList.add("correct");
+            }
+          });
+          if (selected && selected.value !== correctAnswers[q]) {
+            selected.parentElement.classList.add("wrong");
+          }
+          if (selected && selected.value === correctAnswers[q]) score++;
+        }
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of 20`;
+        if (score >= 16)
+          document.getElementById("certLink").style.display = "block";
+      }
+
+      function generateCertificate() {
+        const certWindow = window.open(
+          "",
+          "Certificate",
+          "width=800,height=600"
+        );
+        certWindow.document.write(`
+    <html><head><title>Certificate</title>
+    <style>
+    body { text-align: center; font-family: Arial; padding: 50px; }
+    .cert { border: 10px solid #007acc; padding: 40px; }
+    h1 { font-size: 40px; color: #007acc; }
+    p { font-size: 20px; }
+    </style></head><body>
+    <div class="cert">
+      <h1>Certificate of Achievement</h1>
+      <p>This certifies that</p>
+      <h2>SMART LEARNING AI User</h2>
+      <p>has successfully completed the MongoDB Quiz</p>
+      <p>with a score of 80% or above</p>
+      <p><em>Date: ${new Date().toLocaleDateString()}</em></p>
+    </div></body></html>
+  `);
+        certWindow.document.close();
+        certWindow.print();
+      }
+
+      window.onload = startTimer;
+    </script>
+  </body>
+</html>

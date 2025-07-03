@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+        padding: 20px;
+      }
+      .quiz-container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 800px;
+        margin: auto;
+      }
+      h2 {
+        text-align: center;
+      }
+      .question {
+        margin-bottom: 15px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-top: 15px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h2>JavaScript Quiz</h2>
+      <form id="quizForm">
+        <!-- Q1 -->
+        <div class="question">
+          <p>1. What does JavaScript primarily run on?</p>
+          <label><input type="radio" name="q1" value="b" /> Browser</label
+          ><br />
+          <label><input type="radio" name="q1" value="a" /> Server</label><br />
+          <label><input type="radio" name="q1" value="c" /> Compiler</label>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question">
+          <p>
+            2. Which of the following is the correct syntax for referring to an
+            external script?
+          </p>
+          <label
+            ><input type="radio" name="q2" value="b" /> &lt;script
+            src="file.js"&gt;</label
+          ><br />
+          <label
+            ><input type="radio" name="q2" value="a" />&lt;script
+            href="file.js"&gt;</label
+          ><br />
+          <label
+            ><input type="radio" name="q2" value="c" />&lt;script
+            link="file.js"&gt;</label
+          >
+        </div>
+
+        <!-- Q3 -->
+        <div class="question">
+          <p>3. How do you write "Hello World" in an alert box?</p>
+          <label
+            ><input type="radio" name="q3" value="a" /> alert("Hello
+            World");</label
+          ><br />
+          <label
+            ><input type="radio" name="q3" value="b" /> msgBox("Hello
+            World");</label
+          ><br />
+          <label
+            ><input type="radio" name="q3" value="c" /> alertBox("Hello
+            World");</label
+          >
+        </div>
+
+        <!-- Q4 -->
+        <div class="question">
+          <p>4. Which symbol is used for comments in JavaScript?</p>
+          <label><input type="radio" name="q4" value="a" /> // comment</label
+          ><br />
+          <label><input type="radio" name="q4" value="b" /> /* comment */</label
+          ><br />
+          <label><input type="radio" name="q4" value="c" /> Both A and B</label>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question">
+          <p>5. Which keyword is used to declare a variable in JavaScript?</p>
+          <label><input type="radio" name="q5" value="a" /> var</label><br />
+          <label><input type="radio" name="q5" value="b" /> int</label><br />
+          <label><input type="radio" name="q5" value="c" /> string</label>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question">
+          <p>6. What does 'typeof' operator do?</p>
+          <label
+            ><input type="radio" name="q6" value="a" /> Returns variable
+            type</label
+          ><br />
+          <label><input type="radio" name="q6" value="b" /> Converts type</label
+          ><br />
+          <label
+            ><input type="radio" name="q6" value="c" /> Declares a
+            variable</label
+          >
+        </div>
+
+        <!-- Q7 -->
+        <div class="question">
+          <p>7. What is the correct way to write a JavaScript array?</p>
+          <label
+            ><input type="radio" name="q7" value="b" /> var colors = ["red",
+            "green", "blue"];</label
+          ><br />
+          <label
+            ><input type="radio" name="q7" value="a" /> var colors = "red",
+            "green", "blue";</label
+          ><br />
+          <label
+            ><input type="radio" name="q7" value="c" /> var colors = (1:"red",
+            2:"green")</label
+          >
+        </div>
+
+        <!-- Q8 -->
+        <div class="question">
+          <p>
+            8. Which method is used to round a number to its nearest integer?
+          </p>
+          <label><input type="radio" name="q8" value="a" /> Math.round()</label
+          ><br />
+          <label><input type="radio" name="q8" value="b" /> round()</label
+          ><br />
+          <label><input type="radio" name="q8" value="c" /> Math.floor()</label>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question">
+          <p>9. What is the output of: console.log(typeof [])</p>
+          <label><input type="radio" name="q9" value="a" /> object</label><br />
+          <label><input type="radio" name="q9" value="b" /> array</label><br />
+          <label><input type="radio" name="q9" value="c" /> list</label>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question">
+          <p>10. Which one is a JavaScript framework?</p>
+          <label><input type="radio" name="q10" value="b" /> React</label><br />
+          <label><input type="radio" name="q10" value="a" /> Laravel</label
+          ><br />
+          <label><input type="radio" name="q10" value="c" /> Django</label>
+        </div>
+
+        <!-- Q11 - Q20 -->
+        <!-- Add more questions below similarly -->
+
+        <!-- Add more questions (Q11-Q20) -->
+        <div class="question">
+          <p>11. Which keyword is used to define a constant?</p>
+          <label><input type="radio" name="q11" value="c" /> const</label><br />
+          <label><input type="radio" name="q11" value="a" /> let</label><br />
+          <label><input type="radio" name="q11" value="b" /> var</label>
+        </div>
+
+        <div class="question">
+          <p>12. JavaScript is a ___ language?</p>
+          <label
+            ><input type="radio" name="q12" value="a" /> Object-Oriented</label
+          ><br />
+          <label><input type="radio" name="q12" value="b" /> Assembly</label
+          ><br />
+          <label><input type="radio" name="q12" value="c" /> Markup</label>
+        </div>
+
+        <div class="question">
+          <p>13. Which operator is used to assign a value to a variable?</p>
+          <label><input type="radio" name="q13" value="a" /> =</label><br />
+          <label><input type="radio" name="q13" value="b" /> ==</label><br />
+          <label><input type="radio" name="q13" value="c" /> ===</label>
+        </div>
+
+        <div class="question">
+          <p>14. JavaScript is case-sensitive?</p>
+          <label><input type="radio" name="q14" value="a" /> True</label><br />
+          <label><input type="radio" name="q14" value="b" /> False</label>
+        </div>
+
+        <div class="question">
+          <p>15. Which method adds a new element to the end of an array?</p>
+          <label><input type="radio" name="q15" value="a" /> push()</label
+          ><br />
+          <label><input type="radio" name="q15" value="b" /> add()</label><br />
+          <label><input type="radio" name="q15" value="c" /> append()</label>
+        </div>
+
+        <div class="question">
+          <p>16. What will `Boolean(0)` return?</p>
+          <label><input type="radio" name="q16" value="a" /> false</label><br />
+          <label><input type="radio" name="q16" value="b" /> true</label><br />
+          <label><input type="radio" name="q16" value="c" /> error</label>
+        </div>
+
+        <div class="question">
+          <p>17. What does DOM stand for?</p>
+          <label
+            ><input type="radio" name="q17" value="a" /> Document Object
+            Model</label
+          ><br />
+          <label
+            ><input type="radio" name="q17" value="b" /> Data Object
+            Method</label
+          ><br />
+          <label
+            ><input type="radio" name="q17" value="c" /> Display Object
+            Method</label
+          >
+        </div>
+
+        <div class="question">
+          <p>18. Which event occurs when the user clicks on an HTML element?</p>
+          <label><input type="radio" name="q18" value="a" /> onclick</label
+          ><br />
+          <label><input type="radio" name="q18" value="b" /> onmouse</label
+          ><br />
+          <label><input type="radio" name="q18" value="c" /> onpress</label>
+        </div>
+
+        <div class="question">
+          <p>19. Which method converts JSON to a JavaScript object?</p>
+          <label><input type="radio" name="q19" value="a" /> JSON.parse()</label
+          ><br />
+          <label
+            ><input type="radio" name="q19" value="b" /> JSON.stringify()</label
+          ><br />
+          <label
+            ><input type="radio" name="q19" value="c" /> JSON.convert()</label
+          >
+        </div>
+
+        <div class="question">
+          <p>20. Which symbol is used for strict equality?</p>
+          <label><input type="radio" name="q20" value="a" /> ===</label><br />
+          <label><input type="radio" name="q20" value="b" /> ==</label><br />
+          <label><input type="radio" name="q20" value="c" /> =</label>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+        <div id="result"></div>
+      </form>
+    </div>
+
+    <script>
+      const answers = {
+        q1: "b",
+        q2: "b",
+        q3: "a",
+        q4: "c",
+        q5: "a",
+        q6: "a",
+        q7: "b",
+        q8: "a",
+        q9: "a",
+        q10: "b",
+        q11: "c",
+        q12: "a",
+        q13: "a",
+        q14: "a",
+        q15: "a",
+        q16: "a",
+        q17: "a",
+        q18: "a",
+        q19: "a",
+        q20: "a",
+      };
+
+      function checkAnswers() {
+        let score = 0;
+        for (let i = 1; i <= 20; i++) {
+          let q = document.querySelector(`input[name="q${i}"]:checked`);
+          if (q && q.value === answers[`q${i}`]) {
+            score++;
+          }
+        }
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of 20`;
+      }
+    </script>
+  </body>
+</html>

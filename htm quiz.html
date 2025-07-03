@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f2f2f2;
+      }
+      .quiz-container {
+        max-width: 800px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      .question {
+        color: #333;
+      }
+      .question {
+        margin-top: 15px;
+      }
+      button {
+        padding: 10px 20px;
+        border: none;
+        background: #007bff;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      .result {
+        margin-top: 20px;
+      }
+      #timer {
+        font-weight: bold;
+        color: #dc3545;
+        float: right;
+      }
+      .correct {
+        color: green;
+      }
+      .wrong {
+        color: red;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h1>HTML Quiz <span id="timer">Time Left: 10:00</span></h1>
+      <form id="quizForm">
+        <div id="quiz"></div>
+        <button type="submit">Submit Quiz</button>
+      </form>
+      <div class="result" id="result"></div>
+      <a
+        id="certificateLink"
+        style="display: none"
+        download="html-certificate.txt"
+        >🎓 Download Certificate</a
+      >
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. What does HTML stand for?",
+          options: [
+            "Hyper Trainer Marking Language",
+            "Hyper Text Marketing Language",
+            "Hyper Text Markup Language",
+            "Hyper Text Markup Leveler",
+          ],
+          answer: 2,
+        },
+        {
+          q: "2. Which tag is used to create a hyperlink?",
+          options: ["<link>", "<a>", "<href>", "<url>"],
+          answer: 1,
+        },
+        {
+          q: "3. What is the correct HTML tag for inserting a line break?",
+          options: ["<break>", "<br>", "<lb>", "<newline>"],
+          answer: 1,
+        },
+        {
+          q: "4. Which tag is used for the largest heading?",
+          options: ["<h6>", "<head>", "<h1>", "<header>"],
+          answer: 2,
+        },
+        {
+          q: "5. What does the <img> tag do?",
+          options: [
+            "Insert video",
+            "Insert image",
+            "Make italic text",
+            "Make bold text",
+          ],
+          answer: 1,
+        },
+        {
+          q: "6. Which attribute is used to provide alternative text for an image?",
+          options: ["alt", "title", "src", "longdesc"],
+          answer: 0,
+        },
+        {
+          q: "7. What is the correct HTML tag for a numbered list?",
+          options: ["<ul>", "<ol>", "<li>", "<list>"],
+          answer: 1,
+        },
+        {
+          q: "8. What is the correct tag to make a checkbox in HTML?",
+          options: [
+            "<input type='checkbox'>",
+            "<checkbox>",
+            "<input checkbox>",
+            "<check>",
+          ],
+          answer: 0,
+        },
+        {
+          q: "9. What is the purpose of the <form> tag?",
+          options: [
+            "Create a table",
+            "Create a form for user input",
+            "Link to CSS",
+            "Add images",
+          ],
+          answer: 1,
+        },
+        {
+          q: "10. Which tag is used to define a table row?",
+          options: ["<td>", "<th>", "<tr>", "<table>"],
+          answer: 2,
+        },
+        {
+          q: "11. Which tag is used to create a dropdown menu?",
+          options: [
+            "<input type='select'>",
+            "<dropdown>",
+            "<select>",
+            "<option>",
+          ],
+          answer: 2,
+        },
+        {
+          q: "12. How can you make a numbered list?",
+          options: ["<ul>", "<ol>", "<dl>", "<list>"],
+          answer: 1,
+        },
+        {
+          q: "13. How do you create a comment in HTML?",
+          options: [
+            "// This is a comment",
+            "/* Comment */",
+            "<!-- Comment -->",
+            "<comment>Comment</comment>",
+          ],
+          answer: 2,
+        },
+        {
+          q: "14. What tag is used to embed a video file?",
+          options: ["<media>", "<movie>", "<video>", "<embed>"],
+          answer: 2,
+        },
+        {
+          q: "15. Which tag is used to make text bold?",
+          options: ["<bold>", "<b>", "<strong>", "<em>"],
+          answer: 1,
+        },
+        {
+          q: "16. Which tag defines the document’s body?",
+          options: ["<body>", "<main>", "<section>", "<content>"],
+          answer: 0,
+        },
+        {
+          q: "17. Which attribute is used to open a link in a new tab?",
+          options: ["new-tab", "target='_blank'", "tab='new'", "open='new'"],
+          answer: 1,
+        },
+        {
+          q: "18. Which tag is used to define an unordered list?",
+          options: ["<ol>", "<ul>", "<li>", "<list>"],
+          answer: 1,
+        },
+        {
+          q: "19. Which tag is used to define a table header?",
+          options: ["<th>", "<td>", "<tr>", "<thead>"],
+          answer: 0,
+        },
+        {
+          q: "20. Which doctype is correct for HTML5?",
+          options: [
+            "<!DOCTYPE HTML5>",
+            "<!DOCTYPE html>",
+            "<html5>",
+            "<html version='5'>",
+          ],
+          answer: 1,
+        },
+      ];
+
+      const quizEl = document.getElementById("quiz");
+      const form = document.getElementById("quizForm");
+      const resultEl = document.getElementById("result");
+      const certLink = document.getElementById("certificateLink");
+      const timerEl = document.getElementById("timer");
+
+      let timeLeft = 600;
+
+      function startTimer() {
+        const timer = setInterval(() => {
+          if (timeLeft <= 0) {
+            clearInterval(timer);
+            form.requestSubmit();
+          } else {
+            const min = Math.floor(timeLeft / 60);
+            const sec = timeLeft % 60;
+            timerEl.textContent = `Time Left: ${min}:${
+              sec < 10 ? "0" + sec : sec
+            }`;
+            timeLeft--;
+          }
+        }, 1000);
+      }
+
+      questions.forEach((q, index) => {
+        const div = document.createElement("div");
+        div.classList.add("question");
+        div.innerHTML = `<p>${q.q}</p>`;
+        q.options.forEach((option, i) => {
+          div.innerHTML += `
+        <label><input type="radio" name="q${index}" value="${i}"/> ${option}</label><br/>
+      `;
+        });
+        quizEl.appendChild(div);
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let score = 0;
+        const formData = new FormData(form);
+        const answers = questions.map((q, i) => Number(formData.get(`q${i}`)));
+
+        quizEl.querySelectorAll(".question").forEach((qDiv, i) => {
+          const selected = answers[i];
+          const correct = questions[i].answer;
+          const labels = qDiv.querySelectorAll("label");
+          labels.forEach((label, j) => {
+            if (j === correct) label.classList.add("correct");
+            else if (j === selected) label.classList.add("wrong");
+          });
+          if (selected === correct) score++;
+        });
+
+        const percent = Math.round((score / questions.length) * 100);
+        resultEl.innerHTML = `<h2>Your Score: ${score}/20 (${percent}%)</h2>`;
+
+        if (percent >= 80) {
+          const certText = `Certificate of Achievement\n\nThis certifies that you have successfully completed the HTML Quiz with a score of ${percent}%.\n\nCongratulations!`;
+          const blob = new Blob([certText], { type: "text/plain" });
+          certLink.href = URL.createObjectURL(blob);
+          certLink.style.display = "block";
+        }
+      });
+
+      startTimer();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Java Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+      .quiz-container {
+        background-color: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        max-width: 800px;
+        margin: auto;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .question p {
+        font-weight: bold;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h2>Java Quiz – 20 Questions</h2>
+      <form id="quizForm">
+        <!-- Questions go here -->
+      </form>
+      <button onclick="checkAnswers()">Submit Quiz</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. Which keyword is used to inherit a class in Java?",
+          options: ["import", "extends", "implements", "super"],
+          answer: "extends",
+        },
+        {
+          q: "2. Which method is the entry point of any Java program?",
+          options: ["start()", "init()", "main()", "run()"],
+          answer: "main()",
+        },
+        {
+          q: "3. Java is a ___ language.",
+          options: [
+            "Platform-dependent",
+            "Object-oriented",
+            "Procedural",
+            "Low-level",
+          ],
+          answer: "Object-oriented",
+        },
+        {
+          q: "4. What is the size of an int in Java?",
+          options: ["2 bytes", "4 bytes", "8 bytes", "Depends on system"],
+          answer: "4 bytes",
+        },
+        {
+          q: "5. Which keyword is used to define a constant in Java?",
+          options: ["const", "static", "final", "define"],
+          answer: "final",
+        },
+        {
+          q: "6. What is the default value of a boolean in Java?",
+          options: ["true", "false", "null", "0"],
+          answer: "false",
+        },
+        {
+          q: "7. Which package contains Scanner class?",
+          options: ["java.util", "java.io", "java.lang", "java.awt"],
+          answer: "java.util",
+        },
+        {
+          q: "8. Java bytecode is executed by:",
+          options: ["Compiler", "JVM", "JRE", "JDK"],
+          answer: "JVM",
+        },
+        {
+          q: "9. Which exception is thrown when a divided by zero occurs?",
+          options: [
+            "NullPointerException",
+            "IOException",
+            "ArithmeticException",
+            "RuntimeException",
+          ],
+          answer: "ArithmeticException",
+        },
+        {
+          q: "10. Which symbol is used to import packages in Java?",
+          options: ["#", "$", "import", "*"],
+          answer: "import",
+        },
+        {
+          q: "11. What is the superclass of all classes in Java?",
+          options: ["Object", "Class", "Main", "Base"],
+          answer: "Object",
+        },
+        {
+          q: "12. Which operator is used for comparison in Java?",
+          options: ["=", "==", "<>", "!="],
+          answer: "==",
+        },
+        {
+          q: "13. Which access modifier makes a member accessible from all other classes?",
+          options: ["private", "protected", "default", "public"],
+          answer: "public",
+        },
+        {
+          q: "14. Which of the following is not a primitive data type?",
+          options: ["int", "float", "String", "char"],
+          answer: "String",
+        },
+        {
+          q: "15. Which loop is guaranteed to execute at least once?",
+          options: ["for", "while", "do-while", "foreach"],
+          answer: "do-while",
+        },
+        {
+          q: "16. How do you create an object in Java?",
+          options: [
+            "Class obj = new Class();",
+            "Class = new object();",
+            "new Class;",
+            "object obj = class();",
+          ],
+          answer: "Class obj = new Class();",
+        },
+        {
+          q: "17. Which of the following is used to handle exceptions?",
+          options: ["catch", "throw", "try", "All of the above"],
+          answer: "All of the above",
+        },
+        {
+          q: "18. What is the extension of Java bytecode files?",
+          options: [".java", ".class", ".exe", ".jar"],
+          answer: ".class",
+        },
+        {
+          q: "19. What does JVM stand for?",
+          options: [
+            "Java Variable Machine",
+            "Java Virtual Machine",
+            "Java Verified Machine",
+            "Just Virtual Memory",
+          ],
+          answer: "Java Virtual Machine",
+        },
+        {
+          q: "20. Which statement is used to stop a loop in Java?",
+          options: ["break", "exit", "stop", "terminate"],
+          answer: "break",
+        },
+      ];
+
+      const form = document.getElementById("quizForm");
+
+      questions.forEach((question, index) => {
+        const qDiv = document.createElement("div");
+        qDiv.classList.add("question");
+
+        let html = `<p>${question.q}</p>`;
+        question.options.forEach((option) => {
+          html += `<label><input type="radio" name="q${index}" value="${option}"> ${option}</label><br>`;
+        });
+
+        qDiv.innerHTML = html;
+        form.appendChild(qDiv);
+      });
+
+      function checkAnswers() {
+        let score = 0;
+
+        questions.forEach((question, index) => {
+          const selected = document.querySelector(
+            `input[name="q${index}"]:checked`
+          );
+          if (selected && selected.value === question.answer) {
+            score++;
+          }
+        });
+
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of ${questions.length}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Artificial Intelligence Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f2f5;
+        padding: 20px;
+      }
+      h2 {
+        text-align: center;
+      }
+      .question {
+        background: #fff;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin: 5px 0;
+      }
+      .submit-btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 25px;
+        font-size: 16px;
+        background: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Artificial Intelligence Quiz</h2>
+
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What is Artificial Intelligence?</p>
+        <label><input type="radio" name="q1" /> Programming a website</label>
+        <label
+          ><input type="radio" name="q1" /> Giving machines the ability to learn
+          and act intelligently</label
+        >
+        <label><input type="radio" name="q1" /> A physical robot</label>
+        <label><input type="radio" name="q1" /> Storing data on cloud</label>
+      </div>
+
+      <div class="question">
+        <p>2. Who is considered the father of AI?</p>
+        <label><input type="radio" name="q2" /> Charles Babbage</label>
+        <label><input type="radio" name="q2" /> Alan Turing</label>
+        <label><input type="radio" name="q2" /> John McCarthy</label>
+        <label><input type="radio" name="q2" /> Elon Musk</label>
+      </div>
+
+      <div class="question">
+        <p>3. What is Machine Learning?</p>
+        <label><input type="radio" name="q3" /> Learning to program</label>
+        <label
+          ><input type="radio" name="q3" /> Teaching a machine without explicit
+          programming</label
+        >
+        <label><input type="radio" name="q3" /> Studying data manually</label>
+        <label><input type="radio" name="q3" /> None of the above</label>
+      </div>
+
+      <div class="question">
+        <p>4. Which of the following is an AI application?</p>
+        <label><input type="radio" name="q4" /> Facebook</label>
+        <label><input type="radio" name="q4" /> Siri</label>
+        <label><input type="radio" name="q4" /> MS Paint</label>
+        <label><input type="radio" name="q4" /> Calculator</label>
+      </div>
+
+      <div class="question">
+        <p>5. What is Natural Language Processing?</p>
+        <label><input type="radio" name="q5" /> AI that paints pictures</label>
+        <label
+          ><input type="radio" name="q5" /> AI that understands human
+          language</label
+        >
+        <label><input type="radio" name="q5" /> AI that builds robots</label>
+        <label><input type="radio" name="q5" /> None of these</label>
+      </div>
+
+      <div class="question">
+        <p>6. Which algorithm is commonly used for classification?</p>
+        <label><input type="radio" name="q6" /> Linear Regression</label>
+        <label><input type="radio" name="q6" /> Decision Tree</label>
+        <label><input type="radio" name="q6" /> K-Means</label>
+        <label><input type="radio" name="q6" /> Apriori</label>
+      </div>
+
+      <div class="question">
+        <p>7. What is supervised learning?</p>
+        <label><input type="radio" name="q7" /> Learning without labels</label>
+        <label
+          ><input type="radio" name="q7" /> Learning with labeled data</label
+        >
+        <label><input type="radio" name="q7" /> Random data analysis</label>
+        <label><input type="radio" name="q7" /> None of the above</label>
+      </div>
+
+      <div class="question">
+        <p>8. Which language is commonly used in AI?</p>
+        <label><input type="radio" name="q8" /> Python</label>
+        <label><input type="radio" name="q8" /> HTML</label>
+        <label><input type="radio" name="q8" /> PHP</label>
+        <label><input type="radio" name="q8" /> CSS</label>
+      </div>
+
+      <div class="question">
+        <p>9. What does Deep Learning use?</p>
+        <label><input type="radio" name="q9" /> If-else conditions</label>
+        <label><input type="radio" name="q9" /> Neural Networks</label>
+        <label><input type="radio" name="q9" /> Excel formulas</label>
+        <label><input type="radio" name="q9" /> SQL Queries</label>
+      </div>
+
+      <div class="question">
+        <p>10. Which of the following is a Deep Learning library?</p>
+        <label><input type="radio" name="q10" /> Pandas</label>
+        <label><input type="radio" name="q10" /> TensorFlow</label>
+        <label><input type="radio" name="q10" /> Matplotlib</label>
+        <label><input type="radio" name="q10" /> NumPy</label>
+      </div>
+
+      <div class="question">
+        <p>11. What is the Turing Test?</p>
+        <label><input type="radio" name="q11" /> Test for memory</label>
+        <label
+          ><input type="radio" name="q11" /> Test to check if a machine can
+          mimic human intelligence</label
+        >
+        <label><input type="radio" name="q11" /> IQ test</label>
+        <label><input type="radio" name="q11" /> None of the above</label>
+      </div>
+
+      <div class="question">
+        <p>12. What is the full form of AI?</p>
+        <label><input type="radio" name="q12" /> Artificial Integration</label>
+        <label><input type="radio" name="q12" /> Automated Intelligence</label>
+        <label><input type="radio" name="q12" /> Artificial Intelligence</label>
+        <label><input type="radio" name="q12" /> Applied Integration</label>
+      </div>
+
+      <div class="question">
+        <p>13. What is an agent in AI?</p>
+        <label><input type="radio" name="q13" /> A robot only</label>
+        <label
+          ><input type="radio" name="q13" /> Anything that perceives and
+          acts</label
+        >
+        <label><input type="radio" name="q13" /> Only human programs</label>
+        <label><input type="radio" name="q13" /> An email responder</label>
+      </div>
+
+      <div class="question">
+        <p>14. What is reinforcement learning?</p>
+        <label><input type="radio" name="q14" /> Learning by instruction</label>
+        <label
+          ><input type="radio" name="q14" /> Learning through rewards and
+          penalties</label
+        >
+        <label><input type="radio" name="q14" /> Memorizing data</label>
+        <label><input type="radio" name="q14" /> None of the above</label>
+      </div>
+
+      <div class="question">
+        <p>15. Which is not an AI application?</p>
+        <label><input type="radio" name="q15" /> Google Translate</label>
+        <label><input type="radio" name="q15" /> Self-driving car</label>
+        <label><input type="radio" name="q15" /> Email spam filter</label>
+        <label><input type="radio" name="q15" /> MS Word Spellchecker</label>
+      </div>
+
+      <div class="question">
+        <p>16. What is clustering?</p>
+        <label
+          ><input type="radio" name="q16" /> Grouping similar data points</label
+        >
+        <label><input type="radio" name="q16" /> Sorting data</label>
+        <label><input type="radio" name="q16" /> Cleaning data</label>
+        <label><input type="radio" name="q16" /> Splitting columns</label>
+      </div>
+
+      <div class="question">
+        <p>17. Which of these is not a type of learning?</p>
+        <label><input type="radio" name="q17" /> Supervised</label>
+        <label><input type="radio" name="q17" /> Unsupervised</label>
+        <label><input type="radio" name="q17" /> Reinforcement</label>
+        <label><input type="radio" name="q17" /> Compiled</label>
+      </div>
+
+      <div class="question">
+        <p>18. What is overfitting?</p>
+        <label
+          ><input type="radio" name="q18" /> Model is too complex and fits
+          noise</label
+        >
+        <label><input type="radio" name="q18" /> Model fits perfectly</label>
+        <label
+          ><input type="radio" name="q18" /> Model doesn’t fit at all</label
+        >
+        <label
+          ><input type="radio" name="q18" /> Model predicts everything
+          correctly</label
+        >
+      </div>
+
+      <div class="question">
+        <p>19. What is an example of a real-life AI system?</p>
+        <label><input type="radio" name="q19" /> Google Assistant</label>
+        <label><input type="radio" name="q19" /> Notepad</label>
+        <label><input type="radio" name="q19" /> Paint</label>
+        <label><input type="radio" name="q19" /> Windows Media Player</label>
+      </div>
+
+      <div class="question">
+        <p>20. What is the goal of AI?</p>
+        <label
+          ><input type="radio" name="q20" /> Create hardcoded programs</label
+        >
+        <label
+          ><input type="radio" name="q20" /> Create systems that think and act
+          like humans</label
+        >
+        <label><input type="radio" name="q20" /> Replace the internet</label>
+        <label><input type="radio" name="q20" /> Store big data</label>
+      </div>
+
+      <button
+        type="button"
+        class="submit-btn"
+        onclick="alert('Submit functionality will be added with JavaScript')"
+      >
+        Submit
+      </button>
+    </form>
+  </body>
+</html>

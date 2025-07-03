@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Python Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f0f0f0;
+      }
+      .quiz-container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 800px;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      h2 {
+        color: #333;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .question p {
+        font-weight: bold;
+      }
+      .options label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      button {
+        padding: 10px 20px;
+        background: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      #result {
+        font-size: 20px;
+        font-weight: bold;
+        color: blue;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h2>Python Programming Quiz</h2>
+      <form id="quizForm">
+        <!-- Questions Start -->
+        <div class="question">
+          <p>1. What is the output of print(2 ** 3)?</p>
+          <div class="options">
+            <label><input type="radio" name="q1" value="A" /> 6</label>
+            <label><input type="radio" name="q1" value="B" /> 8</label>
+            <label><input type="radio" name="q1" value="C" /> 9</label>
+            <label><input type="radio" name="q1" value="D" /> 5</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>2. Which keyword is used for function in Python?</p>
+          <div class="options">
+            <label><input type="radio" name="q2" value="A" /> function</label>
+            <label><input type="radio" name="q2" value="B" /> def</label>
+            <label><input type="radio" name="q2" value="C" /> fun</label>
+            <label><input type="radio" name="q2" value="D" /> define</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>3. What is the data type of [1, 2, 3]?</p>
+          <div class="options">
+            <label><input type="radio" name="q3" value="A" /> List</label>
+            <label><input type="radio" name="q3" value="B" /> Tuple</label>
+            <label><input type="radio" name="q3" value="C" /> Dictionary</label>
+            <label><input type="radio" name="q3" value="D" /> Set</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>4. Which of the following is immutable?</p>
+          <div class="options">
+            <label><input type="radio" name="q4" value="A" /> List</label>
+            <label><input type="radio" name="q4" value="B" /> Set</label>
+            <label><input type="radio" name="q4" value="C" /> Dictionary</label>
+            <label><input type="radio" name="q4" value="D" /> Tuple</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>5. What does len("Python") return?</p>
+          <div class="options">
+            <label><input type="radio" name="q5" value="A" /> 5</label>
+            <label><input type="radio" name="q5" value="B" /> 6</label>
+            <label><input type="radio" name="q5" value="C" /> 7</label>
+            <label><input type="radio" name="q5" value="D" /> Error</label>
+          </div>
+        </div>
+
+        <!-- 15 More Questions -->
+        <!-- You can duplicate and modify questions below -->
+        <!-- For brevity, we'll add question numbers only -->
+
+        <!-- Questions 6 to 20 -->
+        <script>
+          const questions = [
+            "6. What is the output of print(type(10))?",
+            "7. What is the output of print(10 // 3)?",
+            "8. Which operator is used for exponentiation?",
+            "9. What is a correct syntax to output 'Hello World'?",
+            "10. Which method is used to remove whitespace?",
+            "11. How do you start a comment in Python?",
+            "12. What is the correct file extension for Python files?",
+            "13. What is the output of: print(bool(0))?",
+            "14. How do you create a variable with value 5?",
+            "15. Which keyword is used to create a class?",
+            "16. What is the correct way to create a dictionary?",
+            "17. Which loop is used for iterating over a sequence?",
+            "18. What is the output of print(3 == '3')?",
+            "19. Which of these is a Python boolean value?",
+            "20. What is the result of: 4 > 2 and 5 < 10?",
+          ];
+
+          const options = [
+            ["int", "str", "float", "bool"],
+            ["3.3", "3", "3.0", "Error"],
+            ["^", "**", "//", "%%"],
+            [
+              "echo('Hello World')",
+              "print('Hello World')",
+              "printf('Hello')",
+              "cout << 'Hello'",
+            ],
+            ["strip()", "trim()", "remove()", "clean()"],
+            ["//", "#", "--", "/*"],
+            [".pyt", ".pt", ".py", ".python"],
+            ["True", "False", "None", "Error"],
+            ["x = 5", "int x = 5", "val x = 5", "x := 5"],
+            ["function", "object", "class", "defclass"],
+            ["dict = {}", "dict = []", "dict = ()", "dict = <>"],
+            ["while", "for", "repeat", "loop"],
+            ["True", "False", "Error", "None"],
+            ["yes", "on", "True", "positive"],
+            ["True", "False", "None", "Error"],
+          ];
+
+          const answers = [
+            "A",
+            "B",
+            "B",
+            "B",
+            "A",
+            "B",
+            "C",
+            "B",
+            "A",
+            "C",
+            "A",
+            "B",
+            "B",
+            "C",
+            "A",
+          ];
+
+          for (let i = 0; i < questions.length; i++) {
+            document.write(`
+          <div class="question">
+            <p>${questions[i]}</p>
+            <div class="options">
+              <label><input type="radio" name="q${i + 6}" value="A"> ${
+              options[i][0]
+            }</label>
+              <label><input type="radio" name="q${i + 6}" value="B"> ${
+              options[i][1]
+            }</label>
+              <label><input type="radio" name="q${i + 6}" value="C"> ${
+              options[i][2]
+            }</label>
+              <label><input type="radio" name="q${i + 6}" value="D"> ${
+              options[i][3]
+            }</label>
+            </div>
+          </div>
+        `);
+          }
+        </script>
+
+        <!-- Submit Button -->
+        <button type="button" onclick="checkAnswers()">Submit Quiz</button>
+        <div id="result"></div>
+      </form>
+    </div>
+
+    <script>
+      function checkAnswers() {
+        const correctAnswers = {
+          q1: "B",
+          q2: "B",
+          q3: "A",
+          q4: "D",
+          q5: "B",
+          q6: "A",
+          q7: "B",
+          q8: "B",
+          q9: "B",
+          q10: "A",
+          q11: "B",
+          q12: "C",
+          q13: "B",
+          q14: "A",
+          q15: "C",
+          q16: "A",
+          q17: "B",
+          q18: "B",
+          q19: "C",
+          q20: "A",
+        };
+        let score = 0;
+        for (let i = 1; i <= 20; i++) {
+          const q = document.querySelector(`input[name="q${i}"]:checked`);
+          if (q && q.value === correctAnswers[`q${i}`]) {
+            score++;
+          }
+        }
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of 20`;
+      }
+    </script>
+  </body>
+</html>

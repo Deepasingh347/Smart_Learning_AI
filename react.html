@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>React Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #eef3f7;
+        padding: 20px;
+      }
+      h2 {
+        text-align: center;
+      }
+      .question {
+        background: white;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin: 5px 0;
+      }
+      .submit-btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>React.js Quiz</h2>
+
+    <form id="quizForm">
+      <!-- Question 1 -->
+      <div class="question">
+        <p>1. What is React primarily used for?</p>
+        <label><input type="radio" name="q1" /> Backend Development</label>
+        <label><input type="radio" name="q1" /> Building user interfaces</label>
+        <label><input type="radio" name="q1" /> Database management</label>
+        <label
+          ><input type="radio" name="q1" /> Mobile app development only</label
+        >
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question">
+        <p>2. Who developed React?</p>
+        <label><input type="radio" name="q2" /> Google</label>
+        <label><input type="radio" name="q2" /> Facebook</label>
+        <label><input type="radio" name="q2" /> Microsoft</label>
+        <label><input type="radio" name="q2" /> Amazon</label>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question">
+        <p>3. What is a React component?</p>
+        <label><input type="radio" name="q3" /> A CSS file</label>
+        <label
+          ><input type="radio" name="q3" /> A function or class that returns
+          JSX</label
+        >
+        <label><input type="radio" name="q3" /> A database schema</label>
+        <label><input type="radio" name="q3" /> A browser plugin</label>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question">
+        <p>4. What is JSX?</p>
+        <label
+          ><input type="radio" name="q4" /> A JavaScript syntax extension for
+          HTML</label
+        >
+        <label><input type="radio" name="q4" /> A JSON format</label>
+        <label><input type="radio" name="q4" /> A style sheet</label>
+        <label><input type="radio" name="q4" /> A package manager</label>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question">
+        <p>5. Which hook is used to handle state in functional components?</p>
+        <label><input type="radio" name="q5" /> useEffect</label>
+        <label><input type="radio" name="q5" /> useReducer</label>
+        <label><input type="radio" name="q5" /> useState</label>
+        <label><input type="radio" name="q5" /> useRef</label>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="question">
+        <p>6. What is the virtual DOM?</p>
+        <label><input type="radio" name="q6" /> A browser cache</label>
+        <label
+          ><input type="radio" name="q6" /> A lightweight copy of the real
+          DOM</label
+        >
+        <label><input type="radio" name="q6" /> A server database</label>
+        <label><input type="radio" name="q6" /> A styling engine</label>
+      </div>
+
+      <!-- Question 7 -->
+      <div class="question">
+        <p>
+          7. Which method is used to pass data from parent to child component?
+        </p>
+        <label><input type="radio" name="q7" /> Props</label>
+        <label><input type="radio" name="q7" /> State</label>
+        <label><input type="radio" name="q7" /> Redux</label>
+        <label><input type="radio" name="q7" /> Events</label>
+      </div>
+
+      <!-- Question 8 -->
+      <div class="question">
+        <p>8. What does "useEffect" do?</p>
+        <label><input type="radio" name="q8" /> Handles styling</label>
+        <label><input type="radio" name="q8" /> Manages side effects</label>
+        <label><input type="radio" name="q8" /> Fetches props</label>
+        <label><input type="radio" name="q8" /> Stores data permanently</label>
+      </div>
+
+      <!-- Question 9 -->
+      <div class="question">
+        <p>9. What does "key" help React identify in a list?</p>
+        <label><input type="radio" name="q9" /> Order of elements</label>
+        <label
+          ><input type="radio" name="q9" /> Which items have changed or been
+          added/removed</label
+        >
+        <label><input type="radio" name="q9" /> The CSS class</label>
+        <label><input type="radio" name="q9" /> Element ID</label>
+      </div>
+
+      <!-- Question 10 -->
+      <div class="question">
+        <p>10. What is the default port for React development server?</p>
+        <label><input type="radio" name="q10" /> 3000</label>
+        <label><input type="radio" name="q10" /> 8080</label>
+        <label><input type="radio" name="q10" /> 5000</label>
+        <label><input type="radio" name="q10" /> 80</label>
+      </div>
+
+      <!-- Question 11 -->
+      <div class="question">
+        <p>11. How do you create a new React app?</p>
+        <label><input type="radio" name="q11" /> create-react</label>
+        <label
+          ><input type="radio" name="q11" /> npx create-react-app myApp</label
+        >
+        <label><input type="radio" name="q11" /> react-start myApp</label>
+        <label><input type="radio" name="q11" /> npx react myApp</label>
+      </div>
+
+      <!-- Question 12 -->
+      <div class="question">
+        <p>12. What is a fragment in React?</p>
+        <label><input type="radio" name="q12" /> A type of router</label>
+        <label
+          ><input type="radio" name="q12" /> A wrapper component without a DOM
+          node</label
+        >
+        <label><input type="radio" name="q12" /> A special prop</label>
+        <label><input type="radio" name="q12" /> A method to fetch data</label>
+      </div>
+
+      <!-- Question 13 -->
+      <div class="question">
+        <p>13. What is the correct way to update state?</p>
+        <label
+          ><input type="radio" name="q13" /> this.state.name = "John"</label
+        >
+        <label><input type="radio" name="q13" /> useState("John")</label>
+        <label><input type="radio" name="q13" /> setState("John")</label>
+        <label><input type="radio" name="q13" /> setName("John")</label>
+      </div>
+
+      <!-- Question 14 -->
+      <div class="question">
+        <p>14. What does Redux do?</p>
+        <label><input type="radio" name="q14" /> Animates components</label>
+        <label><input type="radio" name="q14" /> Manages state globally</label>
+        <label><input type="radio" name="q14" /> Handles CSS transitions</label>
+        <label><input type="radio" name="q14" /> Updates the DOM</label>
+      </div>
+
+      <!-- Question 15 -->
+      <div class="question">
+        <p>15. Which of the following is NOT a React hook?</p>
+        <label><input type="radio" name="q15" /> useContext</label>
+        <label><input type="radio" name="q15" /> useMap</label>
+        <label><input type="radio" name="q15" /> useRef</label>
+        <label><input type="radio" name="q15" /> useMemo</label>
+      </div>
+
+      <!-- Question 16 -->
+      <div class="question">
+        <p>16. What does "lifting state up" mean in React?</p>
+        <label
+          ><input type="radio" name="q16" /> Sharing state across multiple
+          components</label
+        >
+        <label
+          ><input type="radio" name="q16" /> Moving the state to a higher
+          component</label
+        >
+        <label><input type="radio" name="q16" /> Saving state in session</label>
+        <label><input type="radio" name="q16" /> Using global variables</label>
+      </div>
+
+      <!-- Question 17 -->
+      <div class="question">
+        <p>17. What is the use of "useRef"?</p>
+        <label
+          ><input type="radio" name="q17" /> To update the DOM manually</label
+        >
+        <label><input type="radio" name="q17" /> To fetch data</label>
+        <label><input type="radio" name="q17" /> To navigate pages</label>
+        <label><input type="radio" name="q17" /> To style components</label>
+      </div>
+
+      <!-- Question 18 -->
+      <div class="question">
+        <p>18. Which method is used to render components in React?</p>
+        <label><input type="radio" name="q18" /> renderComponent()</label>
+        <label><input type="radio" name="q18" /> ReactDOM.render()</label>
+        <label><input type="radio" name="q18" /> createComponent()</label>
+        <label><input type="radio" name="q18" /> reactMount()</label>
+      </div>
+
+      <!-- Question 19 -->
+      <div class="question">
+        <p>19. What is React Router used for?</p>
+        <label><input type="radio" name="q19" /> Styling</label>
+        <label><input type="radio" name="q19" /> State management</label>
+        <label
+          ><input type="radio" name="q19" /> Navigation between views</label
+        >
+        <label><input type="radio" name="q19" /> API integration</label>
+      </div>
+
+      <!-- Question 20 -->
+      <div class="question">
+        <p>
+          20. Which file typically contains the root component in a React app?
+        </p>
+        <label><input type="radio" name="q20" /> index.js</label>
+        <label><input type="radio" name="q20" /> App.css</label>
+        <label><input type="radio" name="q20" /> index.html</label>
+        <label><input type="radio" name="q20" /> app.config</label>
+      </div>
+
+      <button
+        type="button"
+        class="submit-btn"
+        onclick="alert('Submit functionality to be added with JavaScript')"
+      >
+        Submit
+      </button>
+    </form>
+  </body>
+</html>

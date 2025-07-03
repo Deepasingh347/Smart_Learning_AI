@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cybersecurity Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #eef3f7;
+        padding: 20px;
+      }
+      .quiz-container {
+        max-width: 850px;
+        margin: auto;
+        background-color: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .question p {
+        font-weight: bold;
+      }
+      button {
+        margin-top: 20px;
+        padding: 12px 25px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h2>Cybersecurity Quiz – 20 Questions</h2>
+      <form id="quizForm"></form>
+      <button onclick="checkAnswers()">Submit Quiz</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. What does the term 'phishing' refer to?",
+          options: [
+            "Hacking passwords",
+            "Tricking users into revealing information",
+            "Spying on networks",
+            "Encrypting data",
+          ],
+          answer: "Tricking users into revealing information",
+        },
+        {
+          q: "2. What is the strongest password?",
+          options: ["123456", "Password123", "P@ssW0rd!2023", "abcdef"],
+          answer: "P@ssW0rd!2023",
+        },
+        {
+          q: "3. What does a firewall do?",
+          options: [
+            "Scans for viruses",
+            "Protects against spam",
+            "Monitors network traffic",
+            "Blocks unauthorized access",
+          ],
+          answer: "Blocks unauthorized access",
+        },
+        {
+          q: "4. What is malware?",
+          options: [
+            "A hardware component",
+            "A security tool",
+            "Malicious software",
+            "Antivirus",
+          ],
+          answer: "Malicious software",
+        },
+        {
+          q: "5. Two-factor authentication increases security by:",
+          options: [
+            "Using two devices",
+            "Requiring username and password",
+            "Adding a second form of identity verification",
+            "Encrypting all data",
+          ],
+          answer: "Adding a second form of identity verification",
+        },
+        {
+          q: "6. Which one is NOT a type of malware?",
+          options: ["Trojan", "Worm", "Spyware", "Firewall"],
+          answer: "Firewall",
+        },
+        {
+          q: "7. What does HTTPS signify?",
+          options: [
+            "No encryption",
+            "HyperText Transfer Protocol Secure",
+            "File sharing protocol",
+            "Internal network connection",
+          ],
+          answer: "HyperText Transfer Protocol Secure",
+        },
+        {
+          q: "8. What is the purpose of encryption?",
+          options: [
+            "Speed up internet",
+            "Hide data location",
+            "Make data unreadable to unauthorized users",
+            "Improve design",
+          ],
+          answer: "Make data unreadable to unauthorized users",
+        },
+        {
+          q: "9. What is a DDoS attack?",
+          options: [
+            "Phishing attempt",
+            "Overloading a system with traffic",
+            "Data encryption process",
+            "Firewall update",
+          ],
+          answer: "Overloading a system with traffic",
+        },
+        {
+          q: "10. What is a VPN used for?",
+          options: [
+            "Browsing social media",
+            "Securely connecting to another network",
+            "Improving download speed",
+            "Blocking pop-ups",
+          ],
+          answer: "Securely connecting to another network",
+        },
+        {
+          q: "11. Which of the following is a strong security practice?",
+          options: [
+            "Same password everywhere",
+            "Auto-login",
+            "Two-factor authentication",
+            "Disabling antivirus",
+          ],
+          answer: "Two-factor authentication",
+        },
+        {
+          q: "12. What is the main goal of cyber criminals?",
+          options: [
+            "Creating firewalls",
+            "Improving security",
+            "Gaining unauthorized access",
+            "Helping companies",
+          ],
+          answer: "Gaining unauthorized access",
+        },
+        {
+          q: "13. What is ransomware?",
+          options: [
+            "Software update",
+            "Data backup tool",
+            "Malware that encrypts data and demands payment",
+            "Spam filter",
+          ],
+          answer: "Malware that encrypts data and demands payment",
+        },
+        {
+          q: "14. Which of these is a secure email practice?",
+          options: [
+            "Click unknown links",
+            "Ignore encryption",
+            "Open all attachments",
+            "Verify sender identity",
+          ],
+          answer: "Verify sender identity",
+        },
+        {
+          q: "15. Social engineering in cybersecurity refers to:",
+          options: [
+            "Installing antivirus",
+            "Using social media",
+            "Manipulating people to reveal confidential info",
+            "Scanning servers",
+          ],
+          answer: "Manipulating people to reveal confidential info",
+        },
+        {
+          q: "16. Which of these is a good way to avoid malware?",
+          options: [
+            "Disable firewall",
+            "Click random ads",
+            "Install software from trusted sources",
+            "Use same password",
+          ],
+          answer: "Install software from trusted sources",
+        },
+        {
+          q: "17. Which type of attack intercepts communication between two parties?",
+          options: [
+            "Brute force",
+            "Phishing",
+            "Man-in-the-middle",
+            "SQL injection",
+          ],
+          answer: "Man-in-the-middle",
+        },
+        {
+          q: "18. What does 'patching' mean?",
+          options: [
+            "Designing UI",
+            "Fixing security vulnerabilities",
+            "Installing new software",
+            "Deleting logs",
+          ],
+          answer: "Fixing security vulnerabilities",
+        },
+        {
+          q: "19. What is the purpose of an antivirus?",
+          options: [
+            "Block emails",
+            "Speed up PC",
+            "Detect and remove malicious software",
+            "Fix Wi-Fi",
+          ],
+          answer: "Detect and remove malicious software",
+        },
+        {
+          q: "20. What is a zero-day vulnerability?",
+          options: [
+            "A new password",
+            "A software flaw unknown to the vendor",
+            "An outdated browser",
+            "A type of VPN",
+          ],
+          answer: "A software flaw unknown to the vendor",
+        },
+      ];
+
+      const form = document.getElementById("quizForm");
+
+      questions.forEach((question, index) => {
+        const qDiv = document.createElement("div");
+        qDiv.classList.add("question");
+
+        let html = `<p>${question.q}</p>`;
+        question.options.forEach((option) => {
+          html += `<label><input type="radio" name="q${index}" value="${option}"> ${option}</label><br>`;
+        });
+
+        qDiv.innerHTML = html;
+        form.appendChild(qDiv);
+      });
+
+      function checkAnswers() {
+        let score = 0;
+        questions.forEach((question, index) => {
+          const selected = document.querySelector(
+            `input[name="q${index}"]:checked`
+          );
+          if (selected && selected.value === question.answer) {
+            score++;
+          }
+        });
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of ${questions.length}`;
+      }
+    </script>
+  </body>
+</html>

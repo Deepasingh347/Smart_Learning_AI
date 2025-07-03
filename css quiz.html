@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f2f2f2;
+      }
+      h2 {
+        text-align: center;
+      }
+      .question {
+        background: #fff;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin: 5px 0;
+      }
+      .submit-btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>CSS Quiz</h2>
+
+    <form id="quizForm">
+      <!-- Question 1 -->
+      <div class="question">
+        <p>1. What does CSS stand for?</p>
+        <label><input type="radio" name="q1" /> Creative Style Sheets</label>
+        <label><input type="radio" name="q1" /> Computer Style Sheets</label>
+        <label><input type="radio" name="q1" /> Cascading Style Sheets</label>
+        <label><input type="radio" name="q1" /> Colorful Style Sheets</label>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question">
+        <p>2. Which HTML tag is used to link an external CSS file?</p>
+        <label><input type="radio" name="q2" /> &lt;style&gt;</label>
+        <label><input type="radio" name="q2" /> &lt;script&gt;</label>
+        <label><input type="radio" name="q2" /> &lt;css&gt;</label>
+        <label><input type="radio" name="q2" /> &lt;link&gt;</label>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question">
+        <p>
+          3. Where in an HTML document is the correct place to refer to an
+          external style sheet?
+        </p>
+        <label
+          ><input type="radio" name="q3" /> In the &lt;body&gt; section</label
+        >
+        <label
+          ><input type="radio" name="q3" /> At the end of the document</label
+        >
+        <label
+          ><input type="radio" name="q3" /> In the &lt;head&gt; section</label
+        >
+        <label><input type="radio" name="q3" /> Anywhere</label>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question">
+        <p>4. Which property is used to change the background color?</p>
+        <label><input type="radio" name="q4" /> color</label>
+        <label><input type="radio" name="q4" /> bgcolor</label>
+        <label><input type="radio" name="q4" /> background-color</label>
+        <label><input type="radio" name="q4" /> bg-color</label>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question">
+        <p>5. How do you make text bold in CSS?</p>
+        <label><input type="radio" name="q5" /> font-weight: bold;</label>
+        <label><input type="radio" name="q5" /> text-style: bold;</label>
+        <label><input type="radio" name="q5" /> font: bold;</label>
+        <label><input type="radio" name="q5" /> style: bold;</label>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="question">
+        <p>6. Which CSS property controls the text size?</p>
+        <label><input type="radio" name="q6" /> font-style</label>
+        <label><input type="radio" name="q6" /> text-size</label>
+        <label><input type="radio" name="q6" /> font-size</label>
+        <label><input type="radio" name="q6" /> text-style</label>
+      </div>
+
+      <!-- Question 7 -->
+      <div class="question">
+        <p>7. How do you make a list not display bullet points?</p>
+        <label><input type="radio" name="q7" /> list: none;</label>
+        <label><input type="radio" name="q7" /> text-decoration: none;</label>
+        <label><input type="radio" name="q7" /> list-style-type: none;</label>
+        <label><input type="radio" name="q7" /> display: none;</label>
+      </div>
+
+      <!-- Question 8 -->
+      <div class="question">
+        <p>8. Which is the correct CSS syntax?</p>
+        <label><input type="radio" name="q8" /> {body;color:black;}</label>
+        <label><input type="radio" name="q8" /> body:color=black;</label>
+        <label><input type="radio" name="q8" /> body {color: black;}</label>
+        <label><input type="radio" name="q8" /> {body:color=black;}</label>
+      </div>
+
+      <!-- Question 9 -->
+      <div class="question">
+        <p>9. How do you insert a comment in CSS?</p>
+        <label><input type="radio" name="q9" /> // this is a comment</label>
+        <label><input type="radio" name="q9" /> &lt;!-- comment --&gt;</label>
+        <label><input type="radio" name="q9" /> /* this is a comment */</label>
+        <label><input type="radio" name="q9" /> # this is a comment</label>
+      </div>
+
+      <!-- Question 10 -->
+      <div class="question">
+        <p>10. What is the default value of the position property?</p>
+        <label><input type="radio" name="q10" /> absolute</label>
+        <label><input type="radio" name="q10" /> fixed</label>
+        <label><input type="radio" name="q10" /> static</label>
+        <label><input type="radio" name="q10" /> relative</label>
+      </div>
+
+      <!-- Question 11 -->
+      <div class="question">
+        <p>
+          11. Which property is used to change the left margin of an element?
+        </p>
+        <label><input type="radio" name="q11" /> padding-left</label>
+        <label><input type="radio" name="q11" /> margin-left</label>
+        <label><input type="radio" name="q11" /> indent</label>
+        <label><input type="radio" name="q11" /> spacing-left</label>
+      </div>
+
+      <!-- Question 12 -->
+      <div class="question">
+        <p>12. How do you select an element with id "header"?</p>
+        <label><input type="radio" name="q12" /> #header</label>
+        <label><input type="radio" name="q12" /> .header</label>
+        <label><input type="radio" name="q12" /> header</label>
+        <label><input type="radio" name="q12" /> *header</label>
+      </div>
+
+      <!-- Question 13 -->
+      <div class="question">
+        <p>
+          13. Which selector selects all elements of type &lt;p&gt; inside a
+          &lt;div&gt;?
+        </p>
+        <label><input type="radio" name="q13" /> div + p</label>
+        <label><input type="radio" name="q13" /> div p</label>
+        <label><input type="radio" name="q13" /> div.p</label>
+        <label><input type="radio" name="q13" /> div-p</label>
+      </div>
+
+      <!-- Question 14 -->
+      <div class="question">
+        <p>14. What does the "z-index" property control?</p>
+        <label><input type="radio" name="q14" /> The zoom level</label>
+        <label
+          ><input type="radio" name="q14" /> The stack order of elements</label
+        >
+        <label><input type="radio" name="q14" /> The opacity</label>
+        <label><input type="radio" name="q14" /> The size of text</label>
+      </div>
+
+      <!-- Question 15 -->
+      <div class="question">
+        <p>15. Which property sets the space between letters?</p>
+        <label><input type="radio" name="q15" /> letter-spacing</label>
+        <label><input type="radio" name="q15" /> word-spacing</label>
+        <label><input type="radio" name="q15" /> text-spacing</label>
+        <label><input type="radio" name="q15" /> spacing</label>
+      </div>
+
+      <!-- Question 16 -->
+      <div class="question">
+        <p>16. What is the use of the "display" property?</p>
+        <label><input type="radio" name="q16" /> To specify background</label>
+        <label
+          ><input type="radio" name="q16" /> To hide or show elements</label
+        >
+        <label><input type="radio" name="q16" /> To change font</label>
+        <label><input type="radio" name="q16" /> To apply shadows</label>
+      </div>
+
+      <!-- Question 17 -->
+      <div class="question">
+        <p>17. What does the `hover` pseudo-class do?</p>
+        <label><input type="radio" name="q17" /> Applies styles on click</label>
+        <label
+          ><input type="radio" name="q17" /> Applies styles when the mouse is
+          over an element</label
+        >
+        <label
+          ><input type="radio" name="q17" /> Applies styles when page
+          loads</label
+        >
+        <label
+          ><input type="radio" name="q17" /> Applies styles to hidden
+          elements</label
+        >
+      </div>
+
+      <!-- Question 18 -->
+      <div class="question">
+        <p>18. How do you set a background image in CSS?</p>
+        <label
+          ><input type="radio" name="q18" /> background:
+          image("img.jpg");</label
+        >
+        <label
+          ><input type="radio" name="q18" /> background-img:
+          url("img.jpg");</label
+        >
+        <label
+          ><input type="radio" name="q18" /> background-image:
+          url("img.jpg");</label
+        >
+        <label><input type="radio" name="q18" /> bg: url("img.jpg");</label>
+      </div>
+
+      <!-- Question 19 -->
+      <div class="question">
+        <p>
+          19. Which value of the "position" property makes an element stay in
+          the same place even during scroll?
+        </p>
+        <label><input type="radio" name="q19" /> static</label>
+        <label><input type="radio" name="q19" /> fixed</label>
+        <label><input type="radio" name="q19" /> relative</label>
+        <label><input type="radio" name="q19" /> absolute</label>
+      </div>
+
+      <!-- Question 20 -->
+      <div class="question">
+        <p>20. What is the function of the "opacity" property in CSS?</p>
+        <label
+          ><input type="radio" name="q20" /> Sets the background color</label
+        >
+        <label
+          ><input type="radio" name="q20" /> Controls element
+          transparency</label
+        >
+        <label><input type="radio" name="q20" /> Applies animation</label>
+        <label><input type="radio" name="q20" /> Aligns the text</label>
+      </div>
+
+      <button
+        type="button"
+        class="submit-btn"
+        onclick="alert('Submit functionality to be added with JavaScript')"
+      >
+        Submit
+      </button>
+    </form>
+  </body>
+</html>

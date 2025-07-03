@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DSA Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f7faff;
+        padding: 20px;
+      }
+      .quiz-container {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 10px;
+        max-width: 850px;
+        margin: auto;
+      }
+      h2 {
+        text-align: center;
+        color: #222;
+      }
+      .question {
+        margin-bottom: 15px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-top: 20px;
+        background-color: #0052cc;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h2>Data Structures and Algorithms Quiz (20 Questions)</h2>
+      <form id="quizForm">
+        <!-- Questions -->
+        <div class="question">
+          <p>1. Which data structure uses LIFO?</p>
+          <label><input type="radio" name="q1" value="a" /> Queue</label><br />
+          <label><input type="radio" name="q1" value="b" /> Stack</label><br />
+          <label><input type="radio" name="q1" value="c" /> Tree</label>
+        </div>
+
+        <div class="question">
+          <p>2. What is the time complexity of binary search?</p>
+          <label><input type="radio" name="q2" value="a" /> O(n)</label><br />
+          <label><input type="radio" name="q2" value="b" /> O(log n)</label
+          ><br />
+          <label><input type="radio" name="q2" value="c" /> O(n log n)</label>
+        </div>
+
+        <div class="question">
+          <p>3. Which sorting algorithm is best for nearly sorted arrays?</p>
+          <label
+            ><input type="radio" name="q3" value="a" /> Selection Sort</label
+          ><br />
+          <label
+            ><input type="radio" name="q3" value="b" /> Insertion Sort</label
+          ><br />
+          <label><input type="radio" name="q3" value="c" /> Bubble Sort</label>
+        </div>
+
+        <div class="question">
+          <p>4. Which traversal is used for expression trees?</p>
+          <label><input type="radio" name="q4" value="a" /> Preorder</label
+          ><br />
+          <label><input type="radio" name="q4" value="b" /> Postorder</label
+          ><br />
+          <label><input type="radio" name="q4" value="c" /> Inorder</label>
+        </div>
+
+        <div class="question">
+          <p>5. Which data structure is used in BFS?</p>
+          <label><input type="radio" name="q5" value="a" /> Stack</label><br />
+          <label><input type="radio" name="q5" value="b" /> Queue</label><br />
+          <label><input type="radio" name="q5" value="c" /> Heap</label>
+        </div>
+
+        <div class="question">
+          <p>6. Which data structure gives fast access by key?</p>
+          <label><input type="radio" name="q6" value="a" /> Array</label><br />
+          <label><input type="radio" name="q6" value="b" /> Hash Table</label
+          ><br />
+          <label><input type="radio" name="q6" value="c" /> Stack</label>
+        </div>
+
+        <div class="question">
+          <p>7. What is the height of a balanced binary tree with n nodes?</p>
+          <label><input type="radio" name="q7" value="a" /> O(n)</label><br />
+          <label><input type="radio" name="q7" value="b" /> O(log n)</label
+          ><br />
+          <label><input type="radio" name="q7" value="c" /> O(1)</label>
+        </div>
+
+        <div class="question">
+          <p>8. Which data structure is used in recursion?</p>
+          <label><input type="radio" name="q8" value="a" /> Queue</label><br />
+          <label><input type="radio" name="q8" value="b" /> Stack</label><br />
+          <label><input type="radio" name="q8" value="c" /> Linked List</label>
+        </div>
+
+        <div class="question">
+          <p>9. Which algorithm is used to find shortest path in graphs?</p>
+          <label><input type="radio" name="q9" value="a" /> Kruskal's</label
+          ><br />
+          <label><input type="radio" name="q9" value="b" /> Dijkstra's</label
+          ><br />
+          <label><input type="radio" name="q9" value="c" /> Prim's</label>
+        </div>
+
+        <div class="question">
+          <p>10. What is the time complexity of bubble sort?</p>
+          <label><input type="radio" name="q10" value="a" /> O(n log n)</label
+          ><br />
+          <label><input type="radio" name="q10" value="b" /> O(n)</label><br />
+          <label><input type="radio" name="q10" value="c" /> O(n²)</label>
+        </div>
+
+        <!-- Questions 11–20 -->
+        <div class="question">
+          <p>11. Which of the following is not a linear data structure?</p>
+          <label><input type="radio" name="q11" value="a" /> Array</label><br />
+          <label><input type="radio" name="q11" value="b" /> Linked List</label
+          ><br />
+          <label><input type="radio" name="q11" value="c" /> Graph</label>
+        </div>
+
+        <div class="question">
+          <p>12. What is the worst-case time complexity of Quick Sort?</p>
+          <label><input type="radio" name="q12" value="a" /> O(n²)</label><br />
+          <label><input type="radio" name="q12" value="b" /> O(n log n)</label
+          ><br />
+          <label><input type="radio" name="q12" value="c" /> O(log n)</label>
+        </div>
+
+        <div class="question">
+          <p>13. Which tree traversal uses stack (non-recursively)?</p>
+          <label><input type="radio" name="q13" value="a" /> BFS</label><br />
+          <label><input type="radio" name="q13" value="b" /> DFS</label><br />
+          <label><input type="radio" name="q13" value="c" /> Level order</label>
+        </div>
+
+        <div class="question">
+          <p>
+            14. A queue that allows insertion and deletion at both ends is
+            called:
+          </p>
+          <label
+            ><input type="radio" name="q14" value="a" /> Circular queue</label
+          ><br />
+          <label
+            ><input type="radio" name="q14" value="b" /> Double-ended
+            queue</label
+          ><br />
+          <label
+            ><input type="radio" name="q14" value="c" /> Priority queue</label
+          >
+        </div>
+
+        <div class="question">
+          <p>
+            15. What is the maximum number of children a binary tree node can
+            have?
+          </p>
+          <label><input type="radio" name="q15" value="a" /> 2</label><br />
+          <label><input type="radio" name="q15" value="b" /> 3</label><br />
+          <label><input type="radio" name="q15" value="c" /> 4</label>
+        </div>
+
+        <div class="question">
+          <p>16. Which algorithm is used to detect cycle in a graph?</p>
+          <label><input type="radio" name="q16" value="a" /> BFS</label><br />
+          <label><input type="radio" name="q16" value="b" /> DFS</label><br />
+          <label
+            ><input type="radio" name="q16" value="c" /> Binary Search</label
+          >
+        </div>
+
+        <div class="question">
+          <p>17. Which sorting algorithm is not stable?</p>
+          <label><input type="radio" name="q17" value="a" /> Bubble Sort</label
+          ><br />
+          <label><input type="radio" name="q17" value="b" /> Merge Sort</label
+          ><br />
+          <label><input type="radio" name="q17" value="c" /> Quick Sort</label>
+        </div>
+
+        <div class="question">
+          <p>18. Which data structure is used in a call stack?</p>
+          <label><input type="radio" name="q18" value="a" /> Stack</label><br />
+          <label><input type="radio" name="q18" value="b" /> Queue</label><br />
+          <label><input type="radio" name="q18" value="c" /> Graph</label>
+        </div>
+
+        <div class="question">
+          <p>19. Which data structure works on FIFO?</p>
+          <label><input type="radio" name="q19" value="a" /> Stack</label><br />
+          <label><input type="radio" name="q19" value="b" /> Queue</label><br />
+          <label><input type="radio" name="q19" value="c" /> Tree</label>
+        </div>
+
+        <div class="question">
+          <p>20. Which algorithm is used for Minimum Spanning Tree?</p>
+          <label><input type="radio" name="q20" value="a" /> Dijkstra</label
+          ><br />
+          <label
+            ><input type="radio" name="q20" value="b" /> Floyd Warshall</label
+          ><br />
+          <label><input type="radio" name="q20" value="c" /> Kruskal</label>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+        <div id="result"></div>
+      </form>
+    </div>
+
+    <script>
+      const answers = {
+        q1: "b",
+        q2: "b",
+        q3: "b",
+        q4: "b",
+        q5: "b",
+        q6: "b",
+        q7: "b",
+        q8: "b",
+        q9: "b",
+        q10: "c",
+        q11: "c",
+        q12: "a",
+        q13: "b",
+        q14: "b",
+        q15: "a",
+        q16: "b",
+        q17: "c",
+        q18: "a",
+        q19: "b",
+        q20: "c",
+      };
+
+      function checkAnswers() {
+        let score = 0;
+        for (let i = 1; i <= 20; i++) {
+          let q = document.querySelector(`input[name="q${i}"]:checked`);
+          if (q && q.value === answers[`q${i}`]) {
+            score++;
+          }
+        }
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of 20`;
+      }
+    </script>
+  </body>
+</html>

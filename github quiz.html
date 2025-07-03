@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GitHub Quiz - SMART LEARNING AI</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .question {
+        background: #fff;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .question h3 {
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin: 5px 0;
+      }
+      button {
+        display: block;
+        margin: 30px auto;
+        padding: 10px 25px;
+        font-size: 16px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      #result {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #28a745;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>GitHub Quiz (20 Questions)</h1>
+
+    <form id="quizForm">
+      <!-- Questions 1-10 -->
+      <div class="question">
+        <h3>1. What is GitHub?</h3>
+        <label
+          ><input type="radio" name="q1" value="a" />A programming
+          language</label
+        >
+        <label><input type="radio" name="q1" value="b" />A code editor</label>
+        <label
+          ><input type="radio" name="q1" value="c" />A version control hosting
+          platform</label
+        >
+        <label
+          ><input type="radio" name="q1" value="d" />A database system</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>2. GitHub is based on which version control system?</h3>
+        <label><input type="radio" name="q2" value="a" />Mercurial</label>
+        <label><input type="radio" name="q2" value="b" />SVN</label>
+        <label><input type="radio" name="q2" value="c" />Git</label>
+        <label><input type="radio" name="q2" value="d" />CVS</label>
+      </div>
+
+      <div class="question">
+        <h3>3. Who created Git?</h3>
+        <label><input type="radio" name="q3" value="a" />Bill Gates</label>
+        <label><input type="radio" name="q3" value="b" />Mark Zuckerberg</label>
+        <label><input type="radio" name="q3" value="c" />Linus Torvalds</label>
+        <label><input type="radio" name="q3" value="d" />Steve Jobs</label>
+      </div>
+
+      <div class="question">
+        <h3>4. What is a repository in GitHub?</h3>
+        <label
+          ><input type="radio" name="q4" value="a" />A folder containing
+          files</label
+        >
+        <label
+          ><input type="radio" name="q4" value="b" />A programming
+          function</label
+        >
+        <label
+          ><input type="radio" name="q4" value="c" />A software license</label
+        >
+        <label><input type="radio" name="q4" value="d" />A branch</label>
+      </div>
+
+      <div class="question">
+        <h3>5. What command is used to send local commits to GitHub?</h3>
+        <label><input type="radio" name="q5" value="a" />git commit</label>
+        <label><input type="radio" name="q5" value="b" />git push</label>
+        <label><input type="radio" name="q5" value="c" />git pull</label>
+        <label><input type="radio" name="q5" value="d" />git merge</label>
+      </div>
+
+      <div class="question">
+        <h3>6. What is a pull request on GitHub?</h3>
+        <label
+          ><input type="radio" name="q6" value="a" />A request to pull data from
+          a server</label
+        >
+        <label
+          ><input type="radio" name="q6" value="b" />A request to merge
+          code</label
+        >
+        <label
+          ><input type="radio" name="q6" value="c" />A request to delete a
+          branch</label
+        >
+        <label
+          ><input type="radio" name="q6" value="d" />A request to clone a
+          repo</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>7. What does git clone do?</h3>
+        <label><input type="radio" name="q7" value="a" />Deletes a repo</label>
+        <label
+          ><input type="radio" name="q7" value="b" />Copies a repo from
+          GitHub</label
+        >
+        <label
+          ><input type="radio" name="q7" value="c" />Creates a branch</label
+        >
+        <label><input type="radio" name="q7" value="d" />Merges branches</label>
+      </div>
+
+      <div class="question">
+        <h3>8. What is a branch in GitHub?</h3>
+        <label><input type="radio" name="q8" value="a" />A forked repo</label>
+        <label
+          ><input type="radio" name="q8" value="b" />A new repository</label
+        >
+        <label
+          ><input type="radio" name="q8" value="c" />A parallel version of the
+          repo</label
+        >
+        <label
+          ><input type="radio" name="q8" value="d" />A GitHub
+          organization</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>9. What is the default branch name on GitHub?</h3>
+        <label><input type="radio" name="q9" value="a" />dev</label>
+        <label><input type="radio" name="q9" value="b" />main</label>
+        <label><input type="radio" name="q9" value="c" />master</label>
+        <label><input type="radio" name="q9" value="d" />root</label>
+      </div>
+
+      <div class="question">
+        <h3>10. Which command checks the status of your working directory?</h3>
+        <label><input type="radio" name="q10" value="a" />git check</label>
+        <label><input type="radio" name="q10" value="b" />git status</label>
+        <label><input type="radio" name="q10" value="c" />git info</label>
+        <label><input type="radio" name="q10" value="d" />git show</label>
+      </div>
+
+      <!-- Questions 11–20 -->
+      <script>
+        const gitQs = [
+          [
+            "Which file is used to ignore files in Git?",
+            [".gitignore", ".gitkeep", ".gitconfig", "ignore.txt"],
+          ],
+          [
+            "What is 'forking' in GitHub?",
+            [
+              "Copying someone’s repo",
+              "Merging branches",
+              "Creating branches",
+              "Creating a backup",
+            ],
+          ],
+          [
+            "What does 'git init' do?",
+            [
+              "Starts a new git project",
+              "Deletes a repo",
+              "Pushes code",
+              "Pulls changes",
+            ],
+          ],
+          [
+            "Which command is used to fetch and merge changes from GitHub?",
+            ["git update", "git fetch", "git pull", "git merge"],
+          ],
+          [
+            "Which GitHub feature helps manage issues or bugs?",
+            ["Issues", "Requests", "Branches", "Commits"],
+          ],
+          [
+            "What is a commit in Git?",
+            [
+              "A version snapshot",
+              "A GitHub repo",
+              "A type of branch",
+              "A comment",
+            ],
+          ],
+          [
+            "Which command stages files for commit?",
+            ["git add", "git push", "git stage", "git mark"],
+          ],
+          [
+            "What does `git log` show?",
+            ["Branches", "History", "Pull requests", "Errors"],
+          ],
+          [
+            "What is a merge conflict?",
+            [
+              "When push fails",
+              "When two changes conflict",
+              "When cloning fails",
+              "When a repo is deleted",
+            ],
+          ],
+          [
+            "What is GitHub Actions used for?",
+            ["Hosting", "Automation and CI/CD", "Debugging", "UI Design"],
+          ],
+        ];
+        const gitAns = ["a", "a", "a", "c", "a", "a", "a", "b", "b", "b"];
+        for (let i = 11; i <= 20; i++) {
+          document.write(
+            `<div class="question"><h3>${i}. ${gitQs[i - 11][0]}</h3>`
+          );
+          ["a", "b", "c", "d"].forEach((opt, j) => {
+            document.write(
+              `<label><input type="radio" name="q${i}" value="${opt}">${
+                gitQs[i - 11][1][j]
+              }</label>`
+            );
+          });
+          document.write(`</div>`);
+        }
+      </script>
+
+      <button type="button" onclick="checkAnswers()">Submit Quiz</button>
+      <div id="result"></div>
+    </form>
+
+    <script>
+      const answers = {
+        q1: "c",
+        q2: "c",
+        q3: "c",
+        q4: "a",
+        q5: "b",
+        q6: "b",
+        q7: "b",
+        q8: "c",
+        q9: "b",
+        q10: "b",
+        q11: "a",
+        q12: "a",
+        q13: "a",
+        q14: "c",
+        q15: "a",
+        q16: "a",
+        q17: "a",
+        q18: "b",
+        q19: "b",
+        q20: "b",
+      };
+
+      function checkAnswers() {
+        let score = 0;
+        for (let i = 1; i <= 20; i++) {
+          const selected = document.querySelector(
+            `input[name="q${i}"]:checked`
+          );
+          if (selected && selected.value === answers[`q${i}`]) score++;
+        }
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of 20`;
+      }
+    </script>
+  </body>
+</html>

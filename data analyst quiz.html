@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Analyst Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f9;
+        padding: 20px;
+      }
+      .quiz-container {
+        max-width: 850px;
+        margin: auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .question p {
+        font-weight: bold;
+      }
+      button {
+        margin-top: 20px;
+        padding: 12px 25px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h2>Data Analyst Quiz – 20 Questions</h2>
+      <form id="quizForm"></form>
+      <button onclick="checkAnswers()">Submit Quiz</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. What is the main role of a Data Analyst?",
+          options: [
+            "Design websites",
+            "Clean, analyze and interpret data",
+            "Develop mobile apps",
+            "Manage servers",
+          ],
+          answer: "Clean, analyze and interpret data",
+        },
+        {
+          q: "2. Which of these is a data visualization tool?",
+          options: ["TensorFlow", "Power BI", "PyTorch", "NumPy"],
+          answer: "Power BI",
+        },
+        {
+          q: "3. What does CSV stand for?",
+          options: [
+            "Character Separated Values",
+            "Comma Separated Values",
+            "Column Standard Values",
+            "Common Structured Variables",
+          ],
+          answer: "Comma Separated Values",
+        },
+        {
+          q: "4. Which language is most commonly used for data analysis?",
+          options: ["Java", "Python", "C++", "PHP"],
+          answer: "Python",
+        },
+        {
+          q: "5. What does ETL stand for?",
+          options: [
+            "Extract, Transform, Load",
+            "Execute, Test, Launch",
+            "Edit, Transfer, Locate",
+            "Email, Track, Log",
+          ],
+          answer: "Extract, Transform, Load",
+        },
+        {
+          q: "6. What is a dashboard in data analytics?",
+          options: [
+            "Coding IDE",
+            "A panel showing key metrics and insights",
+            "Firewall software",
+            "A data storage tool",
+          ],
+          answer: "A panel showing key metrics and insights",
+        },
+        {
+          q: "7. Which of these is a Python library used in data analysis?",
+          options: ["Laravel", "Pandas", "Spring", "Django"],
+          answer: "Pandas",
+        },
+        {
+          q: "8. What does SQL stand for?",
+          options: [
+            "Sequential Query Language",
+            "Standard Question Language",
+            "Structured Query Language",
+            "System Query Language",
+          ],
+          answer: "Structured Query Language",
+        },
+        {
+          q: "9. What is a NULL value in data?",
+          options: ["0", "Missing/empty value", "False", "Undefined function"],
+          answer: "Missing/empty value",
+        },
+        {
+          q: "10. Which chart is best for showing parts of a whole?",
+          options: ["Line chart", "Bar chart", "Pie chart", "Scatter plot"],
+          answer: "Pie chart",
+        },
+        {
+          q: "11. What does data cleaning involve?",
+          options: [
+            "Deleting all records",
+            "Fixing or removing incorrect data",
+            "Creating reports",
+            "Encrypting files",
+          ],
+          answer: "Fixing or removing incorrect data",
+        },
+        {
+          q: "12. What is the purpose of a pivot table?",
+          options: [
+            "To clean data",
+            "To summarize and analyze data",
+            "To store large datasets",
+            "To encrypt columns",
+          ],
+          answer: "To summarize and analyze data",
+        },
+        {
+          q: "13. What is the primary key in a database?",
+          options: [
+            "A password to access a table",
+            "A field that uniquely identifies each row",
+            "An encryption key",
+            "A summary column",
+          ],
+          answer: "A field that uniquely identifies each row",
+        },
+        {
+          q: "14. What does the COUNT() function do in SQL?",
+          options: [
+            "Adds all values",
+            "Returns average",
+            "Counts number of rows",
+            "Deletes duplicates",
+          ],
+          answer: "Counts number of rows",
+        },
+        {
+          q: "15. What is a KPI?",
+          options: [
+            "Knowledge Processing Indicator",
+            "Key Performance Indicator",
+            "Known Project Identifier",
+            "Key Pivot Index",
+          ],
+          answer: "Key Performance Indicator",
+        },
+        {
+          q: "16. What is the function of JOIN in SQL?",
+          options: [
+            "Merge tables based on a condition",
+            "Delete duplicates",
+            "Encrypt rows",
+            "Rename tables",
+          ],
+          answer: "Merge tables based on a condition",
+        },
+        {
+          q: "17. Which tool is best for handling large structured data sets?",
+          options: ["Notepad", "Excel", "SQL", "Paint"],
+          answer: "SQL",
+        },
+        {
+          q: "18. What does a histogram show?",
+          options: [
+            "Trend over time",
+            "Frequency distribution",
+            "Correlation",
+            "Geographic location",
+          ],
+          answer: "Frequency distribution",
+        },
+        {
+          q: "19. What does normalization in databases mean?",
+          options: [
+            "Encrypting data",
+            "Removing duplicates and organizing data",
+            "Data visualization",
+            "Deleting rows",
+          ],
+          answer: "Removing duplicates and organizing data",
+        },
+        {
+          q: "20. What is a correlation coefficient used for?",
+          options: [
+            "To calculate averages",
+            "To measure relationship between variables",
+            "To filter rows",
+            "To identify null values",
+          ],
+          answer: "To measure relationship between variables",
+        },
+      ];
+
+      const form = document.getElementById("quizForm");
+
+      questions.forEach((question, index) => {
+        const qDiv = document.createElement("div");
+        qDiv.classList.add("question");
+
+        let html = `<p>${question.q}</p>`;
+        question.options.forEach((option) => {
+          html += `<label><input type="radio" name="q${index}" value="${option}"> ${option}</label><br>`;
+        });
+
+        qDiv.innerHTML = html;
+        form.appendChild(qDiv);
+      });
+
+      function checkAnswers() {
+        let score = 0;
+        questions.forEach((question, index) => {
+          const selected = document.querySelector(
+            `input[name="q${index}"]:checked`
+          );
+          if (selected && selected.value === question.answer) {
+            score++;
+          }
+        });
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of ${questions.length}`;
+      }
+    </script>
+  </body>
+</html>

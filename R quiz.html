@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>R Programming Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+        padding: 20px;
+      }
+      .quiz-container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .question p {
+        font-weight: bold;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h2>R Programming Quiz – 20 Questions</h2>
+      <form id="quizForm"></form>
+      <button onclick="checkAnswers()">Submit Quiz</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. What is R primarily used for?",
+          options: [
+            "Web development",
+            "System programming",
+            "Statistical computing",
+            "Mobile app development",
+          ],
+          answer: "Statistical computing",
+        },
+        {
+          q: "2. What is the assignment operator in R?",
+          options: ["=", "<-", ":=", "=="],
+          answer: "<-",
+        },
+        {
+          q: "3. Which function is used to read a CSV file in R?",
+          options: ["read.csv()", "read.table()", "load()", "import.csv()"],
+          answer: "read.csv()",
+        },
+        {
+          q: "4. What does `str()` do in R?",
+          options: [
+            "Displays structure of object",
+            "Starts a string",
+            "Sets string values",
+            "Stores output",
+          ],
+          answer: "Displays structure of object",
+        },
+        {
+          q: "5. Which function returns the number of rows in a dataframe?",
+          options: ["length()", "nrows()", "nrow()", "count()"],
+          answer: "nrow()",
+        },
+        {
+          q: "6. How are comments written in R?",
+          options: ["// comment", "# comment", "/* comment */", "-- comment"],
+          answer: "# comment",
+        },
+        {
+          q: "7. What does the `summary()` function do?",
+          options: [
+            "Deletes data",
+            "Summarizes statistical data",
+            "Sorts data",
+            "Plots data",
+          ],
+          answer: "Summarizes statistical data",
+        },
+        {
+          q: "8. Which symbol is used for indexing elements in R?",
+          options: ["()", "{}", "[]", "<>"],
+          answer: "[]",
+        },
+        {
+          q: "9. What is the class of TRUE in R?",
+          options: ["integer", "logical", "character", "numeric"],
+          answer: "logical",
+        },
+        {
+          q: "10. What does `dim()` return?",
+          options: [
+            "Number of characters",
+            "Dimensions of object",
+            "Length of vector",
+            "Mean value",
+          ],
+          answer: "Dimensions of object",
+        },
+        {
+          q: "11. Which package is used for data visualization in R?",
+          options: ["dplyr", "ggplot2", "tidyr", "readr"],
+          answer: "ggplot2",
+        },
+        {
+          q: "12. What does `install.packages()` do?",
+          options: [
+            "Install R software",
+            "Install RStudio",
+            "Install R packages",
+            "Update R version",
+          ],
+          answer: "Install R packages",
+        },
+        {
+          q: "13. What is a vector in R?",
+          options: [
+            "A 2D matrix",
+            "A single column table",
+            "A sequence of data elements of the same type",
+            "A file object",
+          ],
+          answer: "A sequence of data elements of the same type",
+        },
+        {
+          q: "14. Which function is used to combine vectors by columns?",
+          options: ["rbind()", "cbind()", "merge()", "append()"],
+          answer: "cbind()",
+        },
+        {
+          q: "15. Which data type is used for decimal numbers in R?",
+          options: ["integer", "character", "logical", "numeric"],
+          answer: "numeric",
+        },
+        {
+          q: "16. What will `mean(c(1, 2, 3, 4, 5))` return?",
+          options: ["15", "3", "5", "1"],
+          answer: "3",
+        },
+        {
+          q: "17. Which function creates a sequence in R?",
+          options: ["seq()", "scan()", "series()", "range()"],
+          answer: "seq()",
+        },
+        {
+          q: "18. What does the function `length()` return?",
+          options: ["Sum", "Count of elements", "Data type", "Column name"],
+          answer: "Count of elements",
+        },
+        {
+          q: "19. Which function gives the first few rows of a dataset?",
+          options: ["tail()", "head()", "first()", "top()"],
+          answer: "head()",
+        },
+        {
+          q: "20. How do you save a plot in R?",
+          options: ["export()", "savePlot()", "ggsave()", "plot.save()"],
+          answer: "ggsave()",
+        },
+      ];
+
+      const form = document.getElementById("quizForm");
+
+      questions.forEach((question, index) => {
+        const qDiv = document.createElement("div");
+        qDiv.classList.add("question");
+
+        let html = `<p>${question.q}</p>`;
+        question.options.forEach((option) => {
+          html += `<label><input type="radio" name="q${index}" value="${option}"> ${option}</label><br>`;
+        });
+
+        qDiv.innerHTML = html;
+        form.appendChild(qDiv);
+      });
+
+      function checkAnswers() {
+        let score = 0;
+        questions.forEach((question, index) => {
+          const selected = document.querySelector(
+            `input[name="q${index}"]:checked`
+          );
+          if (selected && selected.value === question.answer) {
+            score++;
+          }
+        });
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of ${questions.length}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MySQL Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f7f9fb;
+        padding: 20px;
+      }
+      .quiz-container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .question p {
+        font-weight: bold;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h2>MySQL Quiz – 20 Questions</h2>
+      <form id="quizForm"></form>
+      <button onclick="checkAnswers()">Submit Quiz</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. What does MySQL stand for?",
+          options: [
+            "My Structured Query Language",
+            "My Sequential Query Language",
+            "My Standard Query Language",
+            "None of the above",
+          ],
+          answer: "My Structured Query Language",
+        },
+        {
+          q: "2. MySQL is an example of a:",
+          options: [
+            "NoSQL Database",
+            "Relational Database",
+            "Graph Database",
+            "Document Store",
+          ],
+          answer: "Relational Database",
+        },
+        {
+          q: "3. Which command is used to view all databases?",
+          options: [
+            "SHOW DATABASES;",
+            "LIST DATABASES;",
+            "DISPLAY DB;",
+            "SELECT DATABASES;",
+          ],
+          answer: "SHOW DATABASES;",
+        },
+        {
+          q: "4. How do you select all columns from a table?",
+          options: [
+            "SELECT * FROM table;",
+            "SELECT ALL FROM table;",
+            "SELECT table.*;",
+            "SELECT EVERY FROM table;",
+          ],
+          answer: "SELECT * FROM table;",
+        },
+        {
+          q: "5. What is the default port for MySQL?",
+          options: ["3306", "8080", "5432", "1521"],
+          answer: "3306",
+        },
+        {
+          q: "6. Which statement is used to delete a table?",
+          options: [
+            "DELETE TABLE table_name;",
+            "DROP TABLE table_name;",
+            "REMOVE TABLE table_name;",
+            "CLEAR TABLE table_name;",
+          ],
+          answer: "DROP TABLE table_name;",
+        },
+        {
+          q: "7. Which function returns the current date in MySQL?",
+          options: ["CURRENTDATE()", "NOW()", "DATE()", "GETDATE()"],
+          answer: "NOW()",
+        },
+        {
+          q: "8. What is the purpose of the WHERE clause?",
+          options: [
+            "To group results",
+            "To filter rows",
+            "To sort data",
+            "To rename columns",
+          ],
+          answer: "To filter rows",
+        },
+        {
+          q: "9. How do you prevent SQL injection in MySQL?",
+          options: [
+            "Escape characters",
+            "Parameterized queries",
+            "Sanitize input",
+            "All of the above",
+          ],
+          answer: "All of the above",
+        },
+        {
+          q: "10. Which clause groups rows that have the same values?",
+          options: ["GROUP BY", "ORDER BY", "SORT BY", "CLUSTER BY"],
+          answer: "GROUP BY",
+        },
+        {
+          q: "11. What type of language is SQL?",
+          options: [
+            "Procedural",
+            "Object-Oriented",
+            "Declarative",
+            "Functional",
+          ],
+          answer: "Declarative",
+        },
+        {
+          q: "12. What is the purpose of the LIMIT clause?",
+          options: [
+            "To limit column names",
+            "To limit row length",
+            "To restrict the number of rows returned",
+            "To rename columns",
+          ],
+          answer: "To restrict the number of rows returned",
+        },
+        {
+          q: "13. Which of the following is used to rename a table?",
+          options: [
+            "RENAME TABLE",
+            "ALTER TABLE",
+            "MODIFY TABLE",
+            "CHANGE TABLE",
+          ],
+          answer: "RENAME TABLE",
+        },
+        {
+          q: "14. Which keyword is used to make sure all values in a column are unique?",
+          options: ["PRIMARY KEY", "NOT NULL", "UNIQUE", "DISTINCT"],
+          answer: "UNIQUE",
+        },
+        {
+          q: "15. What command is used to create a new database?",
+          options: [
+            "NEW DATABASE",
+            "CREATE DB",
+            "CREATE DATABASE",
+            "INIT DATABASE",
+          ],
+          answer: "CREATE DATABASE",
+        },
+        {
+          q: "16. What is a foreign key?",
+          options: [
+            "A unique identifier",
+            "A key used to link two tables",
+            "A column that allows nulls",
+            "None of the above",
+          ],
+          answer: "A key used to link two tables",
+        },
+        {
+          q: "17. How do you change data in a MySQL table?",
+          options: ["MODIFY", "SET", "UPDATE", "CHANGE"],
+          answer: "UPDATE",
+        },
+        {
+          q: "18. Which data type is best for storing large text?",
+          options: ["VARCHAR", "CHAR", "TEXT", "INT"],
+          answer: "TEXT",
+        },
+        {
+          q: "19. Which operator is used with WHERE to select a range?",
+          options: ["RANGE", "IN", "BETWEEN", "WITHIN"],
+          answer: "BETWEEN",
+        },
+        {
+          q: "20. How do you list all tables in the current database?",
+          options: [
+            "SHOW TABLES;",
+            "LIST TABLES;",
+            "SELECT TABLES;",
+            "DISPLAY TABLES;",
+          ],
+          answer: "SHOW TABLES;",
+        },
+      ];
+
+      const form = document.getElementById("quizForm");
+
+      questions.forEach((question, index) => {
+        const qDiv = document.createElement("div");
+        qDiv.classList.add("question");
+
+        let html = `<p>${question.q}</p>`;
+        question.options.forEach((option) => {
+          html += `<label><input type="radio" name="q${index}" value="${option}"> ${option}</label><br>`;
+        });
+
+        qDiv.innerHTML = html;
+        form.appendChild(qDiv);
+      });
+
+      function checkAnswers() {
+        let score = 0;
+        questions.forEach((question, index) => {
+          const selected = document.querySelector(
+            `input[name="q${index}"]:checked`
+          );
+          if (selected && selected.value === question.answer) {
+            score++;
+          }
+        });
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of ${questions.length}`;
+      }
+    </script>
+  </body>
+</html>

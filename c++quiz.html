@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C++ Quiz - SMART LEARNING AI</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f9ff;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .question {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 15px 0;
+      }
+      .question h3 {
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin: 5px 0;
+      }
+      button {
+        display: block;
+        margin: 30px auto;
+        padding: 10px 25px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      #result {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #28a745;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>C++ Quiz (20 Questions)</h1>
+
+    <form id="quizForm">
+      <!-- Questions 1-10 -->
+      <div class="question">
+        <h3>1. Who developed C++?</h3>
+        <label><input type="radio" name="q1" value="a" />Dennis Ritchie</label>
+        <label><input type="radio" name="q1" value="b" />James Gosling</label>
+        <label
+          ><input type="radio" name="q1" value="c" />Bjarne Stroustrup</label
+        >
+        <label
+          ><input type="radio" name="q1" value="d" />Guido van Rossum</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>2. What is the correct file extension of C++ file?</h3>
+        <label><input type="radio" name="q2" value="a" />.cp</label>
+        <label><input type="radio" name="q2" value="b" />.cpp</label>
+        <label><input type="radio" name="q2" value="c" />.cplus</label>
+        <label><input type="radio" name="q2" value="d" />.cxx</label>
+      </div>
+
+      <div class="question">
+        <h3>3. Which of the following is a correct identifier in C++?</h3>
+        <label><input type="radio" name="q3" value="a" />2var</label>
+        <label><input type="radio" name="q3" value="b" />var_name</label>
+        <label><input type="radio" name="q3" value="c" />#value</label>
+        <label><input type="radio" name="q3" value="d" />void</label>
+      </div>
+
+      <div class="question">
+        <h3>4. What is the output of: <code>cout &lt;&lt; 5 + 10;</code></h3>
+        <label><input type="radio" name="q4" value="a" />510</label>
+        <label><input type="radio" name="q4" value="b" />15</label>
+        <label><input type="radio" name="q4" value="c" />5 + 10</label>
+        <label><input type="radio" name="q4" value="d" />Error</label>
+      </div>
+
+      <div class="question">
+        <h3>5. Which operator is used to allocate memory in C++?</h3>
+        <label><input type="radio" name="q5" value="a" />malloc</label>
+        <label><input type="radio" name="q5" value="b" />alloc</label>
+        <label><input type="radio" name="q5" value="c" />new</label>
+        <label><input type="radio" name="q5" value="d" />create</label>
+      </div>
+
+      <div class="question">
+        <h3>6. Which of the following is a correct comment in C++?</h3>
+        <label
+          ><input type="radio" name="q6" value="a" /># This is a comment</label
+        >
+        <label><input type="radio" name="q6" value="b" />/* Comment */</label>
+        <label><input type="radio" name="q6" value="c" />// Comment</label>
+        <label><input type="radio" name="q6" value="d" />Both b and c</label>
+      </div>
+
+      <div class="question">
+        <h3>7. Which function is the starting point in a C++ program?</h3>
+        <label><input type="radio" name="q7" value="a" />start()</label>
+        <label><input type="radio" name="q7" value="b" />main()</label>
+        <label><input type="radio" name="q7" value="c" />run()</label>
+        <label><input type="radio" name="q7" value="d" />init()</label>
+      </div>
+
+      <div class="question">
+        <h3>8. How do you insert comments in C++ code?</h3>
+        <label><input type="radio" name="q8" value="a" />-- comment</label>
+        <label><input type="radio" name="q8" value="b" />// comment</label>
+        <label><input type="radio" name="q8" value="c" />** comment **</label>
+        <label><input type="radio" name="q8" value="d" />## comment</label>
+      </div>
+
+      <div class="question">
+        <h3>9. Which keyword is used to create a class in C++?</h3>
+        <label><input type="radio" name="q9" value="a" />object</label>
+        <label><input type="radio" name="q9" value="b" />struct</label>
+        <label><input type="radio" name="q9" value="c" />class</label>
+        <label><input type="radio" name="q9" value="d" />type</label>
+      </div>
+
+      <div class="question">
+        <h3>
+          10. What is the output of: <code>int a = 3; cout &lt;&lt; ++a;</code>?
+        </h3>
+        <label><input type="radio" name="q10" value="a" />3</label>
+        <label><input type="radio" name="q10" value="b" />4</label>
+        <label><input type="radio" name="q10" value="c" />Error</label>
+        <label><input type="radio" name="q10" value="d" />Undefined</label>
+      </div>
+
+      <!-- Questions 11-20 (Short version via JS) -->
+      <script>
+        const cppQs = [
+          [
+            "Which of the following is not a C++ keyword?",
+            ["new", "delete", "include", "throw"],
+          ],
+          [
+            "What does OOP stand for?",
+            [
+              "Object-Oriented Programming",
+              "Open Objective Program",
+              "Optional Output Protocol",
+              "Object Operating Program",
+            ],
+          ],
+          [
+            "Which operator is used to access members of a class object?",
+            [".", "::", "->", "**"],
+          ],
+          [
+            "Which one is not a loop structure in C++?",
+            ["for", "while", "loop", "do-while"],
+          ],
+          [
+            "Which header file is required for cout?",
+            [
+              "#include <iostream>",
+              "#include <stdio.h>",
+              "#include <conio.h>",
+              "#include <stdlib.h>",
+            ],
+          ],
+          [
+            "What is the extension of C++ header files?",
+            [".h", ".cpp", ".hpp", ".hh"],
+          ],
+          [
+            "Which operator is overloaded for output?",
+            ["<<", ">>", "::", "**"],
+          ],
+          [
+            "Which of the following is a reference operator?",
+            ["&", "*", "%", "$"],
+          ],
+          [
+            "What does STL stand for?",
+            [
+              "Standard Template Library",
+              "Simple Type Logic",
+              "Structured Template List",
+              "System Template Language",
+            ],
+          ],
+          [
+            "Which feature allows reusing code in C++?",
+            ["Inheritance", "Abstraction", "Encapsulation", "Polymorphism"],
+          ],
+        ];
+        const cppAns = ["c", "a", "a", "c", "a", "c", "a", "a", "a", "a"];
+        for (let i = 11; i <= 20; i++) {
+          document.write(
+            `<div class="question"><h3>${i}. ${cppQs[i - 11][0]}</h3>`
+          );
+          ["a", "b", "c", "d"].forEach((opt, j) => {
+            document.write(
+              `<label><input type="radio" name="q${i}" value="${opt}">${
+                cppQs[i - 11][1][j]
+              }</label>`
+            );
+          });
+          document.write(`</div>`);
+        }
+      </script>
+
+      <button type="button" onclick="checkAnswers()">Submit Quiz</button>
+      <div id="result"></div>
+    </form>
+
+    <script>
+      const answers = {
+        q1: "c",
+        q2: "b",
+        q3: "b",
+        q4: "b",
+        q5: "c",
+        q6: "d",
+        q7: "b",
+        q8: "b",
+        q9: "c",
+        q10: "b",
+        q11: "c",
+        q12: "a",
+        q13: "a",
+        q14: "c",
+        q15: "a",
+        q16: "c",
+        q17: "a",
+        q18: "a",
+        q19: "a",
+        q20: "a",
+      };
+
+      function checkAnswers() {
+        let score = 0;
+        for (let i = 1; i <= 20; i++) {
+          const q = document.forms["quizForm"][`q${i}`];
+          if (q && q.value === answers[`q${i}`]) {
+            score++;
+          }
+        }
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of 20`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C Programming Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #eef2f3;
+        padding: 20px;
+      }
+      .quiz-container {
+        max-width: 800px;
+        margin: auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
+      h2 {
+        text-align: center;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .question p {
+        font-weight: bold;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #2196f3;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h2>C Programming Quiz – 20 Questions</h2>
+      <form id="quizForm"></form>
+      <button onclick="checkAnswers()">Submit</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "1. Who is the father of C language?",
+          options: [
+            "James Gosling",
+            "Bjarne Stroustrup",
+            "Dennis Ritchie",
+            "Guido van Rossum",
+          ],
+          answer: "Dennis Ritchie",
+        },
+        {
+          q: "2. What is the file extension of a C source file?",
+          options: [".cpp", ".c", ".java", ".py"],
+          answer: ".c",
+        },
+        {
+          q: "3. Which keyword is used to define a constant in C?",
+          options: ["final", "define", "const", "#const"],
+          answer: "const",
+        },
+        {
+          q: "4. Which of the following is a valid variable name in C?",
+          options: ["int", "float", "my_var", "123abc"],
+          answer: "my_var",
+        },
+        {
+          q: "5. What is the correct format specifier for printing an integer?",
+          options: ["%f", "%c", "%d", "%s"],
+          answer: "%d",
+        },
+        {
+          q: "6. Which of the following is used to read input from the user?",
+          options: ["printf", "scanf", "cin", "read"],
+          answer: "scanf",
+        },
+        {
+          q: "7. Which operator is used for logical AND?",
+          options: ["&", "&&", "|", "||"],
+          answer: "&&",
+        },
+        {
+          q: "8. What is the size of an int in C (typically)?",
+          options: ["2 bytes", "4 bytes", "8 bytes", "1 byte"],
+          answer: "4 bytes",
+        },
+        {
+          q: "9. What is the output of 5 % 2 in C?",
+          options: ["2", "1", "0", "5"],
+          answer: "1",
+        },
+        {
+          q: "10. Which loop checks the condition at the end?",
+          options: ["for", "while", "do-while", "foreach"],
+          answer: "do-while",
+        },
+        {
+          q: "11. Which header file is used for input/output in C?",
+          options: ["stdio.h", "conio.h", "iostream", "string.h"],
+          answer: "stdio.h",
+        },
+        {
+          q: "12. Which data type is used to store a single character?",
+          options: ["char", "string", "int", "float"],
+          answer: "char",
+        },
+        {
+          q: "13. What does the 'break' statement do in C?",
+          options: [
+            "Restarts the loop",
+            "Skips an iteration",
+            "Exits the loop",
+            "Ends program",
+          ],
+          answer: "Exits the loop",
+        },
+        {
+          q: "14. Which keyword is used to return a value from a function?",
+          options: ["return", "break", "void", "exit"],
+          answer: "return",
+        },
+        {
+          q: "15. What is a correct syntax to declare an array of 5 integers?",
+          options: ["int[5] a;", "int a[5];", "a int[5];", "array int a[5];"],
+          answer: "int a[5];",
+        },
+        {
+          q: "16. What is the default return type of a function if not specified in C?",
+          options: ["void", "int", "char", "float"],
+          answer: "int",
+        },
+        {
+          q: "17. What does '&&' mean in C?",
+          options: ["Bitwise AND", "Logical AND", "OR", "NOT"],
+          answer: "Logical AND",
+        },
+        {
+          q: "18. What is used to insert comments in C?",
+          options: ["// comment", "/* comment */", "# comment", "Both A and B"],
+          answer: "Both A and B",
+        },
+        {
+          q: "19. Which of the following is a loop structure in C?",
+          options: ["if", "for", "switch", "goto"],
+          answer: "for",
+        },
+        {
+          q: "20. Which keyword is used to declare a pointer?",
+          options: ["ref", "*", "&", "ptr"],
+          answer: "*",
+        },
+      ];
+
+      const form = document.getElementById("quizForm");
+
+      questions.forEach((question, index) => {
+        const qDiv = document.createElement("div");
+        qDiv.classList.add("question");
+
+        let html = `<p>${question.q}</p>`;
+        question.options.forEach((option) => {
+          html += `<label><input type="radio" name="q${index}" value="${option}"> ${option}</label><br>`;
+        });
+
+        qDiv.innerHTML = html;
+        form.appendChild(qDiv);
+      });
+
+      function checkAnswers() {
+        let score = 0;
+        questions.forEach((question, index) => {
+          const selected = document.querySelector(
+            `input[name="q${index}"]:checked`
+          );
+          if (selected && selected.value === question.answer) {
+            score++;
+          }
+        });
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of ${questions.length}`;
+      }
+    </script>
+  </body>
+</html>

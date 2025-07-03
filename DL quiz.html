@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deep Learning Quiz - SMART LEARNING AI</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #eef4fa;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+      }
+      .question {
+        background: #fff;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .question h3 {
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin: 5px 0;
+      }
+      button {
+        display: block;
+        margin: 30px auto;
+        padding: 10px 25px;
+        font-size: 16px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      #result {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #28a745;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Deep Learning Quiz (20 Questions)</h1>
+
+    <form id="quizForm">
+      <!-- Questions 1–10 -->
+      <div class="question">
+        <h3>1. What is Deep Learning?</h3>
+        <label
+          ><input type="radio" name="q1" value="a" />Subset of Machine Learning
+          using decision trees</label
+        >
+        <label
+          ><input type="radio" name="q1" value="b" />Subset of AI that uses
+          neural networks</label
+        >
+        <label
+          ><input type="radio" name="q1" value="c" />Programming
+          technique</label
+        >
+        <label
+          ><input type="radio" name="q1" value="d" />Data cleaning
+          process</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>2. What is a neuron in deep learning?</h3>
+        <label
+          ><input type="radio" name="q2" value="a" />A biological cell</label
+        >
+        <label
+          ><input type="radio" name="q2" value="b" />A unit in neural network
+          that receives inputs and produces output</label
+        >
+        <label><input type="radio" name="q2" value="c" />A type of GPU</label>
+        <label><input type="radio" name="q2" value="d" />An algorithm</label>
+      </div>
+
+      <div class="question">
+        <h3>3. What is the most commonly used activation function?</h3>
+        <label><input type="radio" name="q3" value="a" />Linear</label>
+        <label><input type="radio" name="q3" value="b" />Sigmoid</label>
+        <label><input type="radio" name="q3" value="c" />ReLU</label>
+        <label><input type="radio" name="q3" value="d" />Tanh</label>
+      </div>
+
+      <div class="question">
+        <h3>4. Which type of neural network is used for image recognition?</h3>
+        <label><input type="radio" name="q4" value="a" />RNN</label>
+        <label><input type="radio" name="q4" value="b" />CNN</label>
+        <label><input type="radio" name="q4" value="c" />DNN</label>
+        <label><input type="radio" name="q4" value="d" />GAN</label>
+      </div>
+
+      <div class="question">
+        <h3>5. What is backpropagation?</h3>
+        <label
+          ><input type="radio" name="q5" value="a" />Forward propagation of
+          data</label
+        >
+        <label
+          ><input type="radio" name="q5" value="b" />Loss function
+          calculation</label
+        >
+        <label
+          ><input type="radio" name="q5" value="c" />Optimization
+          algorithm</label
+        >
+        <label
+          ><input type="radio" name="q5" value="d" />Method for updating weights
+          using gradients</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>6. What does CNN stand for?</h3>
+        <label
+          ><input type="radio" name="q6" value="a" />Central Neural
+          Network</label
+        >
+        <label
+          ><input type="radio" name="q6" value="b" />Convolutional Neural
+          Network</label
+        >
+        <label
+          ><input type="radio" name="q6" value="c" />Converged Neural Net</label
+        >
+        <label
+          ><input type="radio" name="q6" value="d" />Contextual Neural
+          Network</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>7. What is dropout in neural networks?</h3>
+        <label><input type="radio" name="q7" value="a" />Model deletion</label>
+        <label
+          ><input type="radio" name="q7" value="b" />Training stoppage</label
+        >
+        <label
+          ><input type="radio" name="q7" value="c" />Regularization
+          technique</label
+        >
+        <label
+          ><input type="radio" name="q7" value="d" />Data augmentation</label
+        >
+      </div>
+
+      <div class="question">
+        <h3>8. Which optimizer is most commonly used?</h3>
+        <label><input type="radio" name="q8" value="a" />SGD</label>
+        <label><input type="radio" name="q8" value="b" />Adam</label>
+        <label><input type="radio" name="q8" value="c" />RMSprop</label>
+        <label><input type="radio" name="q8" value="d" />Adagrad</label>
+      </div>
+
+      <div class="question">
+        <h3>9. Which layer reduces spatial dimensions in CNNs?</h3>
+        <label><input type="radio" name="q9" value="a" />Dense</label>
+        <label><input type="radio" name="q9" value="b" />Dropout</label>
+        <label><input type="radio" name="q9" value="c" />Pooling</label>
+        <label><input type="radio" name="q9" value="d" />Conv2D</label>
+      </div>
+
+      <div class="question">
+        <h3>10. What is the main challenge in training deep networks?</h3>
+        <label
+          ><input type="radio" name="q10" value="a" />Too many neurons</label
+        >
+        <label
+          ><input type="radio" name="q10" value="b" />Overfitting and vanishing
+          gradients</label
+        >
+        <label><input type="radio" name="q10" value="c" />Small datasets</label>
+        <label
+          ><input type="radio" name="q10" value="d" />Linear functions</label
+        >
+      </div>
+
+      <!-- Questions 11–20 using JavaScript -->
+      <script>
+        const dlQs = [
+          [
+            "What is an epoch in deep learning?",
+            [
+              "Iteration over dataset",
+              "Layer in network",
+              "Learning rate",
+              "Batch",
+            ],
+          ],
+          [
+            "Which framework is used for deep learning?",
+            ["Scikit-learn", "TensorFlow", "Flask", "NumPy"],
+          ],
+          [
+            "What is a loss function?",
+            [
+              "Optimizer",
+              "Function to measure error",
+              "Layer type",
+              "Data preprocessor",
+            ],
+          ],
+          [
+            "What is the function of softmax?",
+            [
+              "Linear regression",
+              "Backpropagation",
+              "Converts scores to probabilities",
+              "Batching",
+            ],
+          ],
+          [
+            "What is a GAN?",
+            [
+              "Gradient Applied Network",
+              "Generative Adversarial Network",
+              "Graph Attention Node",
+              "General AI Network",
+            ],
+          ],
+          [
+            "What are weights in neural networks?",
+            [
+              "Connections between models",
+              "Values adjusted during training",
+              "Data columns",
+              "Functions",
+            ],
+          ],
+          [
+            "What is transfer learning?",
+            [
+              "Transferring loss",
+              "Training from scratch",
+              "Using pre-trained models",
+              "Hyperparameter tuning",
+            ],
+          ],
+          ["Which is used for NLP tasks?", ["CNN", "RNN", "KNN", "SVM"]],
+          [
+            "What is batch size?",
+            [
+              "Dataset size",
+              "Test size",
+              "Number of samples in one update",
+              "Learning rate",
+            ],
+          ],
+          [
+            "Which function is used to reduce overfitting?",
+            ["ReLU", "Crossentropy", "Dropout", "Softmax"],
+          ],
+        ];
+        const dlAns = ["a", "b", "b", "c", "b", "b", "c", "b", "c", "c"];
+        for (let i = 11; i <= 20; i++) {
+          document.write(
+            `<div class="question"><h3>${i}. ${dlQs[i - 11][0]}</h3>`
+          );
+          ["a", "b", "c", "d"].forEach((opt, j) => {
+            document.write(
+              `<label><input type="radio" name="q${i}" value="${opt}">${
+                dlQs[i - 11][1][j]
+              }</label>`
+            );
+          });
+          document.write(`</div>`);
+        }
+      </script>
+
+      <button type="button" onclick="checkAnswers()">Submit Quiz</button>
+      <div id="result"></div>
+    </form>
+
+    <script>
+      const answers = {
+        q1: "b",
+        q2: "b",
+        q3: "c",
+        q4: "b",
+        q5: "d",
+        q6: "b",
+        q7: "c",
+        q8: "b",
+        q9: "c",
+        q10: "b",
+        q11: "a",
+        q12: "b",
+        q13: "b",
+        q14: "c",
+        q15: "b",
+        q16: "b",
+        q17: "c",
+        q18: "b",
+        q19: "c",
+        q20: "c",
+      };
+
+      function checkAnswers() {
+        let score = 0;
+        for (let i = 1; i <= 20; i++) {
+          const selected = document.querySelector(
+            `input[name="q${i}"]:checked`
+          );
+          if (selected && selected.value === answers[`q${i}`]) {
+            score++;
+          }
+        }
+        document.getElementById(
+          "result"
+        ).innerText = `You scored ${score} out of 20`;
+      }
+    </script>
+  </body>
+</html>
