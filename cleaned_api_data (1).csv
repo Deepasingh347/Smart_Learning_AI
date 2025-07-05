@@ -1,0 +1,5 @@
+endpoint,method,id,title,status,uptime
+/search,GET,1.0,Python Course,,
+/search,GET,2.0,Data Science,,
+/search/scroll/{hash},GET,101.0,Advanced AI Course,,
+/monitor/health,GET,,,healthy,99.99
