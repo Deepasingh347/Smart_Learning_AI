@@ -159,9 +159,9 @@
             </div>
             <section class="home">
                 <div class="home-content">
-                  <h2>Unlock Your Future with "Smart Learning AI"</h2>
+                  <h2>Accomplish Your Goal "Smart Learning AI"</h2>
                   <p>Learn new skills, boost your career, or explore your passions — anytime, anywhere, at no cost.</p>
-                  <p>Welcome to <strong>LearnOnline</strong>, your destination for 100% free, high-quality online courses. Whether you're starting from scratch or looking to upgrade your skills, our platform offers courses in programming, design, marketing, personal development, and more — taught by experienced instructors, with lifetime access.</p>
+                  <p>Welcome to <strong>LearnOnline</strong>,Whether you're starting from scratch or looking to upgrade your skills, our platform offers courses in programming, design, marketing, personal development, and more — taught by experienced instructors, with lifetime access.</p>
                   <div class="home-buttons">
                     <a href="#courses" class="btn">Browse Courses</a>
                     <a href="#registration" class="btn btn-secondary">Sign Up Now</a>
@@ -169,20 +169,7 @@
                 </div>
               </section>
         </section>
-        <h2>Search Available Courses</h2>
-        <input type="text" id="searchInput" class="search-box" placeholder="Type to search courses..." oninput="searchCourses()">
-<div id="searchResults"></div>
-<script>
-    function filterCourses() {
-      let input = document.getElementById('searchInput').value.toLowerCase();
-      let items = document.querySelectorAll('#courseList li');
-
-      items.forEach(item => {
-        let text = item.textContent.toLowerCase();
-        item.style.display = text.includes(input) ? '' : 'none';
-      });
-    }
-  </script>
+        <input type="text" id="searchBar" placeholder="Search courses..." onkeyup="filterCourses()" style="width: 100%; padding: 10px; margin-bottom: 20px; font-size: 16px;">
         <section id="courses">
             <h2>Available Courses</h2>
             <div class="course">
@@ -450,6 +437,21 @@
     <footer>
 <p>&copy; 2025 Smart Learning AI. All Rights Reserved.</p>
     </footer>
+             <script>
+    function filterCourses() {
+      const input = document.getElementById("searchBar").value.toLowerCase();
+      const courses = document.querySelectorAll(".course");
+
+      courses.forEach(course => {
+        const title = course.querySelector("h3").innerText.toLowerCase();
+        if (title.includes(input)) {
+          course.style.display = "block";
+        } else {
+          course.style.display = "none";
+        }
+      });
+    }
+  </script>
   <script>
         document.getElementById('registerBtn').addEventListener('click', function() {
             const form = document.getElementById('registrationForm');
